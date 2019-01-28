@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Buildspec</string>
+    <string  name="학점">학점</string>
+    <string  name="날짜설정">날짜설정</string>
+    <string  name="목표학점">목표학점</string>
+    <string  name="최대학점">4.5</string>
+    <string  name="최소학점">0.0</string>
+
+</resources>
