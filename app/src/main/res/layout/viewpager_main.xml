@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPagerScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomNavigationBar"
+        app:itemIconTint="@drawable/btn_pressed"
+        app:itemTextColor="@drawable/btn_pressed"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottombar_menu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#e6ffffff"></android.support.design.widget.BottomNavigationView>
+</RelativeLayout>
+
+<!--
+app:labelVisibilityMode="labeled" 메뉴5개 전체보임
+app:itemBackground="@color/white"
+-->

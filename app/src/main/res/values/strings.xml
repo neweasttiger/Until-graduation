@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Buildspec</string>
+    <string name="app_name">졸업까지</string>
     <string  name="학점">학점</string>
     <string  name="날짜설정">날짜설정</string>
     <string  name="목표학점">목표학점</string>

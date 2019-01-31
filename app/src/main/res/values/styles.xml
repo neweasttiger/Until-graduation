@@ -8,4 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="RealAppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/white</item>
+        <!--Status Bar 배경색-->
+        <item name="colorPrimary">@color/realColorPrimary</item>
+        <!--Status Bar 배경색-->
+        <item name="android:statusBarColor">@color/realColorPrimary</item>
+        <!--Status Bar 글자색깔-->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:actionBarSize">44dp</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--Splash 이미지-->
+        <item name="android:windowBackground">@drawable/img_splash</item>
+    </style>
 </resources>

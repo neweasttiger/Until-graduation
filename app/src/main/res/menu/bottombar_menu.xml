@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/Home"
+        android:enabled="true"
+        android:icon="@drawable/tabitem_home"
+        android:title="홈"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/CoverLetter"
+        android:enabled="true"
+        android:title="자소서"
+        android:icon="@drawable/tabitem_grade"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/Grade"
+        android:enabled="true"
+        android:title="성적관리"
+        android:icon="@drawable/tabitem_coverletter"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/BucketList"
+        android:enabled="true"
+        android:icon="@drawable/tabitem_bucketlist"
+        android:title="버킷리스트"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/Setting"
+        android:enabled="true"
+        android:icon="@drawable/setting_tabbar_item"
+        android:title=""
+        app:showAsAction="ifRoom"></item>
+</menu>
+
+<!--
+액션바 설정 xml 중에 showAsAction 설정 부분이 있다
+app:showAsAction="always" : 항상 보이게 표시
+app:showAsAction="never" : 항상 overflow 에 표시
+app:showAsAction="ifRoom" : 액션바에 공간이 있을경우 표시
+app:showAsAction="withText" : 액션바에 아이콘과 텍스트 함께 표시
+-->

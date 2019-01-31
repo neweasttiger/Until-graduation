@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/Home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="홈"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/ItemList"
+        android:enabled="true"
+        android:icon="@drawable/ic_assignment_black_24dp"
+        android:title="목록"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/ReBuy"
+        android:enabled="true"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
+        android:title="재구매"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/Setting"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="설정"
+        app:showAsAction="ifRoom"></item>
+</menu>
+
+<!--
+액션바 설정 xml 중에 showAsAction 설정 부분이 있다
+app:showAsAction="always" : 항상 보이게 표시
+app:showAsAction="never" : 항상 overflow 에 표시
+app:showAsAction="ifRoom" : 액션바에 공간이 있을경우 표시
+app:showAsAction="withText" : 액션바에 아이콘과 텍스트 함께 표시
+-->
