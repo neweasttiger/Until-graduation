@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
@@ -22,10 +24,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.ToolBar);
+        //setSupportActionBar(toolbar);
+        // Get the ActionBar here to configure the way it behaves.
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setDisplayShowCustomEnabled(true); //커스터마이징 하기 위해 필요
+        //actionBar.setDisplayShowTitleEnabled(false);
+
         //현재 액션바 완벽하게 좌우 채워지지 않은 상태
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.layout_actionbar);
-        getSupportActionBar().setTitle("hello");
+        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        //getSupportActionBar().setCustomView(R.layout.layout_actionbar);
+        //getSupportActionBar().setTitle("hello");
 
 
         //ActionBar actionBar = getSupportActionBar();

@@ -5,7 +5,7 @@
     <item
         android:id="@+id/Home"
         android:enabled="true"
-        android:icon="@drawable/tabitem_home"
+        android:icon="@drawable/item_home"
         android:title="홈"
         app:showAsAction="ifRoom"></item>
 
@@ -13,20 +13,20 @@
         android:id="@+id/CoverLetter"
         android:enabled="true"
         android:title="자소서"
-        android:icon="@drawable/tabitem_grade"
+        android:icon="@drawable/item_coverletter"
         app:showAsAction="ifRoom"></item>
 
     <item
         android:id="@+id/Grade"
         android:enabled="true"
         android:title="성적관리"
-        android:icon="@drawable/tabitem_coverletter"
+        android:icon="@drawable/item_grade"
         app:showAsAction="ifRoom"></item>
 
     <item
         android:id="@+id/BucketList"
         android:enabled="true"
-        android:icon="@drawable/tabitem_bucketlist"
+        android:icon="@drawable/item_bucketlist"
         android:title="버킷리스트"
         app:showAsAction="ifRoom"></item>
 

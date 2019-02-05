@@ -5,10 +5,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:id="@+id/app_toolbar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="졸업까지"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:id="@+id/ActionBarTitle"
+            android:textSize="20sp"
+            />
+    </android.support.v7.widget.Toolbar>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPagerScreen"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+        android:layout_height="wrap_content">
+    </android.support.v4.view.ViewPager>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottomNavigationBar"
@@ -25,4 +42,21 @@
 <!--
 app:labelVisibilityMode="labeled" 메뉴5개 전체보임
 app:itemBackground="@color/white"
+
+<android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:id="@+id/app_toolbar"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toolbar Title"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:id="@+id/ActionBarTitle"
+            android:textSize="20sp"
+            />
+    </android.support.v7.widget.Toolbar>
 -->

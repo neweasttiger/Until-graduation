@@ -6,22 +6,29 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.TextView;
+
 
 /**
  * Created by 성민 on 2018-03-30.
  * Revised by 동진 on 2019-01-30.
  */
 
-public class ViewPager_Main extends FragmentActivity {
+public class ViewPager_Main extends AppCompatActivity {
 
-    ViewPager viewPager;
+    ViewPager mViewPager;
     private MenuItem currentPosition;
+
+    TabLayout tabLayout;
 
     public static boolean ClickCount = true;
     long pressedTime;
@@ -35,6 +42,8 @@ public class ViewPager_Main extends FragmentActivity {
 
     private BackPressCloseHandler backPressCloseHandler; // 뒤로 두번 누르면 종료
 
+    Toolbar tb; // 툴바
+    TextView tv;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,35 +59,49 @@ public class ViewPager_Main extends FragmentActivity {
 
         viewpagerMain = ViewPager_Main.this;
 
-        viewPager = (ViewPager) findViewById(R.id.viewPagerScreen);
+        mViewPager = (ViewPager) findViewById(R.id.viewPagerScreen);
+
+        tv = (TextView)findViewById(R.id.ActionBarTitle);
+        Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar);
+        setSupportActionBar(tb);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+
+        // 탭관련 부분
+        //tabLayout = (TabLayout) findViewById(R.id.TabLayout);
+        //tabLayout.addTab(tabLayout.newTab().setText("Tab One"));
+        //tabLayout.addTab(tabLayout.newTab().setText("Tab Two"));
+        //tabLayout.addTab(tabLayout.newTab().setText("Tab Three"));
+        //tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.Home:
-                        viewPager.setCurrentItem(0);
+                        mViewPager.setCurrentItem(0);
                         return true;
 
                     case R.id.CoverLetter:
-                        viewPager.setCurrentItem(1);
+                        mViewPager.setCurrentItem(1);
                         return true;
 
                     case R.id.Grade:
-                        viewPager.setCurrentItem(2);
+                        mViewPager.setCurrentItem(2);
                         return true;
 
                     case R.id.BucketList:
-                        viewPager.setCurrentItem(3);
+                        mViewPager.setCurrentItem(3);
                         return true;
 
                     case R.id.Setting:
-                        viewPager.setCurrentItem(4);
+                        mViewPager.setCurrentItem(4);
                         return true;
                 }
                 return false;
             }
         });
+
 
     }
 
@@ -116,10 +139,10 @@ public class ViewPager_Main extends FragmentActivity {
     public void onResume() {
         super.onResume();
 
-        viewPager.setAdapter(new pageAdapter(getSupportFragmentManager()));
-        viewPager.setCurrentItem(fragmentPosition);
-        viewPager.setOffscreenPageLimit(5);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mViewPager.setAdapter(new pageAdapter(getSupportFragmentManager()));
+        mViewPager.setCurrentItem(fragmentPosition);
+        mViewPager.setOffscreenPageLimit(5);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 if (currentPosition != null) {
@@ -131,6 +154,30 @@ public class ViewPager_Main extends FragmentActivity {
 
             @Override
             public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        //setTitle("졸업까지");
+                        tv.setText("졸업까지");
+                        return;
+                    case 1:
+                        //setTitle("자소서");
+                        tv.setText("자기소개서");
+                        return;
+                    case 2:
+                        //setTitle("성적관리");
+                        tv.setText("성적관리");
+                        return;
+                    case 3:
+                        //setTitle("스펙 버킷리스트");
+                        tv.setText("스펙 버킷리스트");
+                        return;
+                    case 4:
+                        //setTitle("설정");
+                        tv.setText("설정");
+                        return;
+                    default:
+                        return;
+                }
             }
 
             @Override
@@ -140,7 +187,14 @@ public class ViewPager_Main extends FragmentActivity {
         });
     }
 
+    public void setActionBarTitle(String title) {
+        //getSupportActionBar().setTitle(title);
+    }
+
     public void onBackPressed() {
         backPressCloseHandler.onBackPressed();
     }
+
+
 }
+
