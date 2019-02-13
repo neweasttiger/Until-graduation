@@ -1,165 +1,451 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainscrollview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:layout_marginBottom="25dp"
+    android:background="#80d8d8d8  "
+    android:clipToPadding="false">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:background="#d8d8d8  ">
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:letterSpacing="-0.02"
+                android:padding="19dp"
+                android:text="@string/학점"
+                android:textColor="#475058"
+                android:textSize="17.2sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/borderbottom"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:padding="19dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="start|center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/목표학점"
+                    android:textColor="#bebebe"
+                    android:textSize="14.4sp" />
+
+                <EditText
+                    android:id="@+id/학점값"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/button"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/최소학점"
+                    android:inputType="numberDecimal"
+                    android:letterSpacing="-0.02"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#475058"
+                    android:textSize="22.2sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:text="/"
+                    android:textColor="#475058"
+                    android:textSize="21.3sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1.5"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:text="4.5"
+                    android:textColor="#475058"
+                    android:textSize="22.2sp" />
+
+                <TextView
+                    android:id="@+id/dateselect1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="end"
+                    android:letterSpacing="-0.02"
+                    android:text="@string/날짜설정"
+                    android:textColor="#787878"
+                    android:textSize="14.4sp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:letterSpacing="-0.02"
+                android:orientation="horizontal"
+                android:paddingLeft="19dp"
+                android:paddingRight="19dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="어학"
+                    android:textColor="#475058"
+                    android:textSize="17.2sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7" />
+
+                <TextView
+                    android:id="@+id/addbutton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="end"
+                    android:text="+"
+                    android:textColor="#4dabff"
+                    android:textSize="28.7sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:id="@+id/lanorigin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/borderbottom"
+                    android:orientation="horizontal"
+                    android:paddingLeft="19dp"
+                    android:paddingRight="19dp"
+                    android:weightSum="10"
+
+                    >
+
+
+                    <EditText
+                        android:id="@+id/examname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_weight="2.5"
+                        android:background="@drawable/button"
+                        android:gravity="start"
+                        android:hint="시험 종류"
+                        android:letterSpacing="-0.02"
+                        android:paddingLeft="3dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="#475058"
+                        android:textSize="14.4sp" />
+
+                    <EditText
+                        android:id="@+id/scoregrade"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_weight="3.5"
+                        android:background="@drawable/button"
+                        android:gravity="center_horizontal"
+                        android:hint="점수 및 등급"
+                        android:inputType="text"
+                        android:letterSpacing="-0.02"
+                        android:paddingLeft="3dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="#475058"
+                        android:textSize="14.4sp" />
+
+                    <TextView
+                        android:id="@+id/dateselect2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_weight="4"
+                        android:gravity="end"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/날짜설정"
+                        android:textColor="#787878"
+                        android:textSize="14.4sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="12.5dp">
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:letterSpacing="-0.02"
+                android:padding="19dp"
+                android:text="자격"
+                android:textColor="#475058"
+                android:textSize="17.2sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:background="@drawable/borderbottom"
+                android:orientation="horizontal"
+                android:padding="19dp"
+                android:weightSum="10">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:background="@drawable/button"
+                    android:gravity="start"
+                    android:hint="자격증 이름"
+                    android:letterSpacing="-0.02"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#475058"
+                    android:textSize="14.4sp" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/border"
-                    android:padding="19dp"
-                    android:textColor="#475058"
-                    android:textSize="17.2sp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="4"
+                    android:gravity="end"
                     android:letterSpacing="-0.02"
-                    tools:text="@string/학점" />
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/날짜설정"
+                    android:textColor="#787878"
+                    android:textSize="14.4sp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/borderbottom"
-                    android:orientation="horizontal"
-                    android:padding="19dp"
-                    android:weightSum="10">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:gravity="start"
-                        android:textColor="#bebebe"
-                        android:textSize="14.4sp"
-                        android:letterSpacing="-0.02"
-                        tools:text="@string/목표학점" />
-
-                    <EditText
-                        android:id="@+id/editText1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.5"
-                        android:background="#ffffff"
-                        android:elevation="8dp"
-                        android:gravity="center_horizontal"
-                        android:inputType="number"
-                        android:letterSpacing="-0.02"
-                        android:text="@string/최소학점"
-                        android:textColor="#475058"
-                        android:textSize="22.2sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:textColor="#475058"
-                        android:textSize="21.3sp"
-                        android:letterSpacing="-0.02"
-                        tools:text="/" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.5"
-                        android:gravity="center_horizontal"
-                        android:textColor="#475058"
-                        android:textSize="22.2sp"
-                        android:letterSpacing="-0.02"
-                        tools:text="4.5" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:gravity="end"
-                        android:letterSpacing="-0.31"
-                        android:textColor="#787878"
-                        android:textSize="14.4sp"
-                        tools:text="날짜설정" />
-
-                </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="19dp"
-                    android:textSize="17.2sp"
-                    android:textColor="#475058"
-                    android:background="@drawable/border"
-                    android:letterSpacing="-0.02"
-                    tools:text="어학"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/borderbottom"
-                    android:orientation="horizontal"
-                    android:padding="19dp"
-                    android:weightSum="10">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:gravity="start"
-                        android:letterSpacing="-0.02"
-                        android:textColor="#475058"
-                        android:textSize="14.4sp"
-                        android:background="#ffffff"
-                        tools:text="시험 종류" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:gravity="center_horizontal"
-                        android:textSize="14.4sp"
-                        android:textColor="#475058"
-                        android:letterSpacing="-0.02"
-                        android:background="#ffffff"
-                        tools:text="점수 및 등급"
-                        android:layout_marginEnd="5dp"
-                        />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:gravity="end"
-                        android:textColor="#787878"
-                        android:textSize="14.4sp"
-                        tools:text="날짜설정" />
-
-                </LinearLayout>
-            </LinearLayout>
-
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="15dp">
 
-    </ScrollView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:letterSpacing="-0.02"
+                android:padding="19dp"
+                android:text="수상"
+                android:textColor="#475058"
+                android:textSize="17.2sp"
+                android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/borderbottom"
+                android:orientation="horizontal"
+                android:padding="19dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="start"
+                    android:letterSpacing="-0.02"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="목표수상"
+                    android:textColor="#bebebe"
+                    android:textSize="14.4sp" />
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:gravity="center_horizontal"
+                    android:hint="0"
+                    android:inputType="number"
+                    android:letterSpacing="-0.02"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#475058"
+                    android:textSize="14.4sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:text="개"
+
+                    android:textColor="#475058"
+                    android:textSize="14.4sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6.5"
+                    android:gravity="end"
+                    android:letterSpacing="-0.02"
+                    android:text="@string/날짜설정"
+                    android:textColor="#787878"
+                    android:textSize="14.4sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:letterSpacing="-0.02"
+                android:padding="19dp"
+                android:text="봉사"
+                android:textColor="#475058"
+                android:textSize="17.2sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/borderbottom"
+                android:orientation="horizontal"
+                android:padding="19dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="start"
+                    android:letterSpacing="-0.02"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="목표시간"
+                    android:textColor="#bebebe"
+                    android:textSize="14.4sp" />
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/button"
+                    android:gravity="center_horizontal"
+                    android:hint="0"
+                    android:inputType="number"
+                    android:letterSpacing="-0.02"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#475058"
+                    android:textSize="14.4sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:text="시간"
+                    android:textColor="#475058"
+                    android:textSize="14.4sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="end"
+                    android:letterSpacing="-0.02"
+                    android:text="@string/날짜설정"
+                    android:textColor="#787878"
+                    android:textSize="14.4sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
+

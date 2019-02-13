@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/comdele"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#4dabff"
+    android:weightSum="1"
+    >
+    <TextView
+        android:layout_margin="20dp"
+        android:id="@+id/dele"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:shadowColor="#38000000"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:textSize="16.3sp"
+        android:textColor="#ffffff"
+        android:letterSpacing="-0.02"
+        android:gravity="center_horizontal"
+        android:text="삭제"
+        />
+
+    <TextView
+        android:layout_margin="20dp"
+        android:id="@+id/com"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.5"
+    android:shadowColor="#38000000"
+    android:shadowDy="2"
+    android:shadowRadius="4"
+    android:textSize="16.3sp"
+    android:textColor="#ffffff"
+    android:letterSpacing="-0.02"
+    android:gravity="center_horizontal"
+    android:text="달성"
+    />
+
+
+</LinearLayout>

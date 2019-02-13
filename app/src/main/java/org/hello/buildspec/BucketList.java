@@ -7,15 +7,262 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.annotation.SuppressLint;
+import android.app.DownloadManager;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Rect;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.transition.Slide;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Vector;
 
 public class BucketList extends Fragment {
+
+    int i = 0;
+    int j = 500;
+    int k = 1000;
+    int s = 1500;
+    float x = 0, y = 0;
+    Vector languageId = new Vector();
+
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_bucketlist, container, false);
+        final View mView = inflater.inflate(R.layout.fragment_bucketlist, container, false);
         return layout;
+
+        //****  어학  ****//
+        TextView text2 = (TextView) mView.findViewById(R.id.dateselect2);
+        EditText name = (EditText) mView.findViewById(R.id.examname);
+        EditText score = (EditText) mView.findViewById(R.id.scoregrade);
+        LinearLayout ss = (LinearLayout) mView.findViewById(R.id.lanorigin);
+        TextView add = (TextView) mView.findViewById(R.id.addbutton);
+
+        ss.setId(s);
+        text2.setId(i);
+        name.setId(j);
+        score.setId(k);
+        languageId.add(i);
+        i++;
+        j++;
+        k++;
+        s++;
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                LinearLayout linearLayout = (LinearLayout) mView.findViewById(R.id.language);
+                LayoutInflater inflater = (LayoutInflater) mView.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                inflater.inflate(R.layout.language, linearLayout, true);
+
+                TextView newtext2 = (TextView) mView.findViewById(R.id.newdateselect2);
+                EditText newexam2 = (EditText) mView.findViewById(R.id.newexamname);
+                EditText newscore2 = (EditText) mView.findViewById(R.id.newscoregrade);
+                LinearLayout ss = (LinearLayout) mView.findViewById(R.id.newlanorigin);
+
+                ss.setId(s);
+                newtext2.setId(i);
+                languageId.add(i);
+                newexam2.setId(j);
+                newscore2.setId(k);
+                i++;
+                j++;
+                k++;
+                s++;
+                newtext2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String numStr2 = String.valueOf(v.getId());
+                        Toast.makeText(getApplicationContext(), numStr2, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), calandar.class);
+                        intent.putExtra("key", "value");
+                        startActivityForResult(intent, v.getId());
+                    }
+
+                });
+
+
+            }
+        });
+
+        text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getActivity(), calandar.class);
+                intent.putExtra("key", "value");
+                startActivityForResult(intent, 100);
+            }
+
+        });
+
+        text2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getActivity(), calandar.class);
+                intent.putExtra("key", "value");
+                startActivityForResult(intent, v.getId());
+
+            }
+
+        });
+
     }
+
+    @SuppressLint("ClickableViewAccessibility")
+    @Override
+    protected void onActivityResult(final int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode != RESULT_OK)
+            return;
+
+        if (requestCode == 100) {
+            String result = data.getStringExtra("key");
+            String dday = data.getStringExtra("day");
+            String rd = dday + "\n" + result;
+            TextView text = (TextView) findViewById(R.id.dateselect1);
+            text.setText(rd);
+
+            Toast.makeText(getApplicationContext(), dday, Toast.LENGTH_SHORT).show();
+        }
+
+        if (languageId.contains(requestCode)) {
+
+            TextView text2 = (TextView) findViewById(requestCode);
+            EditText name = (EditText) findViewById(requestCode + 500);
+            EditText score = (EditText) findViewById(requestCode + 1000);
+
+            // ****************** d day 생성
+            String result2 = data.getStringExtra("key");
+            String dday2 = data.getStringExtra("day");
+            String s = result2.substring(2);
+            String rd2 = dday2 + "\n" + s;
+
+            SpannableString srd2 = new SpannableString(rd2);
+            int start = rd2.indexOf("\n");
+            int end = rd2.length();
+            srd2.setSpan(new ForegroundColorSpan(Color.parseColor("#4dabff")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            srd2.setSpan(new RelativeSizeSpan(1.2f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+            // *************************************************
+
+            text2.setText(srd2);
+            text2.setPadding(0, 0, 0, 0);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT);
+            lp.gravity = Gravity.TOP | Gravity.END;
+            lp.weight = 4;
+            text2.setLayoutParams(lp);
+            text2.setClickable(false);
+
+            name.setClickable(false);
+            name.setFocusable(false);
+            score.setClickable(false);
+            score.setFocusable(false);
+
+            //********************** 슬라이드 이벤트
+            LinearLayout linearLayout = (LinearLayout) findViewById(requestCode + 1500);
+
+            linearLayout.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+
+                public boolean onTouch(View v, MotionEvent event) {
+                    final int layoutId = v.getId();
+                    final int MOVE = 10;
+                    switch (event.getAction()) {
+
+                        case MotionEvent.ACTION_DOWN: {
+                            v.getParent().requestDisallowInterceptTouchEvent(true);
+                            x = event.getRawX();
+                            y = event.getRawY();
+                            break;
+                        }
+                        case MotionEvent.ACTION_UP: {
+                            v.getParent().requestDisallowInterceptTouchEvent(true);
+                            float diffxx = x - event.getRawX();
+                            float diffyy = y - event.getRawY();
+                            if (Math.abs(diffxx) > Math.abs(diffyy)) {
+                                if (diffxx < MOVE) {
+                                    Toast.makeText(getApplicationContext(), "오른쪽때짐", Toast.LENGTH_SHORT).show();
+
+                                    final LinearLayout linearLayout = (LinearLayout) findViewById(layoutId);
+                                    linearLayout.setVisibility(View.GONE);
+                                    LinearLayout linearLayouts = (LinearLayout) findViewById(R.id.language);
+                                    LinearLayout.LayoutParams paramlinear = new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.MATCH_PARENT,
+                                            LinearLayout.LayoutParams.MATCH_PARENT);
+                                    LayoutInflater comdeleinflate = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                                    LinearLayout comdelelayout = (LinearLayout) comdeleinflate.inflate(R.layout.comdele, null);
+
+                                    final int comdeleId = layoutId + 500;
+                                    comdelelayout.setId(comdeleId);
+
+                                    linearLayouts.addView(comdelelayout, paramlinear);
+                                    TextView dele = (TextView) findViewById(R.id.dele);
+                                    dele.setId(comdeleId + 10);
+                                    TextView com = (TextView) findViewById(R.id.com);
+                                    com.setId(comdeleId + 50);
+                                    com.setOnClickListener(new View.OnClickListener() {
+
+                                        @Override
+                                        public void onClick(View v) {
+                                            LinearLayout linearLayouts = (LinearLayout) findViewById(comdeleId);
+                                            linearLayouts.setVisibility(View.GONE);
+                                            LinearLayout linearLayout = (LinearLayout) findViewById(layoutId);
+                                            linearLayout.setBackgroundResource(R.drawable.completeborderbottom);
+                                            linearLayout.setVisibility(View.VISIBLE);
+                                        }
+                                    });
+                                    dele.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            LinearLayout linearLayouts = (LinearLayout) findViewById(comdeleId);
+                                            linearLayouts.removeAllViews();
+                                        }
+                                    });
+                                    break;
+                                }
+                            }
+
+                        }
+                    }
+                    return true;
+                }
+
+            });
+
+        }
+    }
+
+    /////
+    public int getgrade(String s, int score) {
+
+        return i;
+    }
+
+
 }
