@@ -1,5 +1,6 @@
 package org.hello.buildspec;
 
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -37,6 +38,8 @@ import android.widget.Toast;
 
 import java.util.Vector;
 
+import static android.app.Activity.RESULT_OK;
+
 public class BucketList extends Fragment {
 
     int i = 0;
@@ -45,21 +48,24 @@ public class BucketList extends Fragment {
     int s = 1500;
     float x = 0, y = 0;
     Vector languageId = new Vector();
-
+    TextView text2;
+    EditText name;
+    EditText score;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_bucketlist, container, false);
+    //public View onCreateView(ScrollView inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ScrollView mScrollView = (ScrollView) inflater.inflate(R.layout.fragment_bucketlist, container, false);
+        //LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_bucketlist, container, false);
         final View mView = inflater.inflate(R.layout.fragment_bucketlist, container, false);
-        return layout;
 
         //****  어학  ****//
-        TextView text2 = (TextView) mView.findViewById(R.id.dateselect2);
-        EditText name = (EditText) mView.findViewById(R.id.examname);
-        EditText score = (EditText) mView.findViewById(R.id.scoregrade);
+        text2 = (TextView) mView.findViewById(R.id.dateselect2);
+        name = (EditText) mView.findViewById(R.id.examname);
+        score = (EditText) mView.findViewById(R.id.scoregrade);
         LinearLayout ss = (LinearLayout) mView.findViewById(R.id.lanorigin);
         TextView add = (TextView) mView.findViewById(R.id.addbutton);
 
@@ -75,9 +81,9 @@ public class BucketList extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(getActivity().getApplicationContext(), "add", Toast.LENGTH_SHORT).show();
                 LinearLayout linearLayout = (LinearLayout) mView.findViewById(R.id.language);
-                LayoutInflater inflater = (LayoutInflater) mView.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 inflater.inflate(R.layout.language, linearLayout, true);
 
                 TextView newtext2 = (TextView) mView.findViewById(R.id.newdateselect2);
@@ -98,8 +104,8 @@ public class BucketList extends Fragment {
                     @Override
                     public void onClick(View v) {
                         String numStr2 = String.valueOf(v.getId());
-                        Toast.makeText(getApplicationContext(), numStr2, Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getActivity(), calandar.class);
+                        Toast.makeText(getActivity().getApplicationContext(), numStr2, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), GetCalendar.class);
                         intent.putExtra("key", "value");
                         startActivityForResult(intent, v.getId());
                     }
@@ -110,35 +116,40 @@ public class BucketList extends Fragment {
             }
         });
 
+        /*
         text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), calandar.class);
+                Intent intent = new Intent(getActivity(), GetCalendar.class);
                 intent.putExtra("key", "value");
                 startActivityForResult(intent, 100);
             }
 
         });
+        */
 
         text2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), calandar.class);
+                Intent intent = new Intent(getActivity(), GetCalendar.class);
                 intent.putExtra("key", "value");
                 startActivityForResult(intent, v.getId());
-
             }
 
         });
+
+        return mScrollView;
 
     }
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
-    protected void onActivityResult(final int requestCode, int resultCode, Intent data) {
+     public void onActivityResult(final int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        //final View mView = inflater.inflate(R.layout.fragment_bucketlist, container, false);
 
         if (resultCode != RESULT_OK)
             return;
@@ -147,17 +158,17 @@ public class BucketList extends Fragment {
             String result = data.getStringExtra("key");
             String dday = data.getStringExtra("day");
             String rd = dday + "\n" + result;
-            TextView text = (TextView) findViewById(R.id.dateselect1);
+            TextView text = (TextView) getActivity().findViewById(R.id.dateselect1);
             text.setText(rd);
 
-            Toast.makeText(getApplicationContext(), dday, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(), dday, Toast.LENGTH_SHORT).show();
         }
 
         if (languageId.contains(requestCode)) {
 
-            TextView text2 = (TextView) findViewById(requestCode);
-            EditText name = (EditText) findViewById(requestCode + 500);
-            EditText score = (EditText) findViewById(requestCode + 1000);
+            TextView text2 = (TextView) getActivity().findViewById(requestCode);
+            EditText name = (EditText) getActivity().findViewById(requestCode + 500);
+            EditText score = (EditText) getActivity().findViewById(requestCode + 1000);
 
             // ****************** d day 생성
             String result2 = data.getStringExtra("key");
@@ -186,7 +197,7 @@ public class BucketList extends Fragment {
             score.setFocusable(false);
 
             //********************** 슬라이드 이벤트
-            LinearLayout linearLayout = (LinearLayout) findViewById(requestCode + 1500);
+            LinearLayout linearLayout = (LinearLayout) getActivity().findViewById(requestCode + 1500);
 
             linearLayout.setOnTouchListener(new View.OnTouchListener() {
                 @Override
@@ -208,32 +219,32 @@ public class BucketList extends Fragment {
                             float diffyy = y - event.getRawY();
                             if (Math.abs(diffxx) > Math.abs(diffyy)) {
                                 if (diffxx < MOVE) {
-                                    Toast.makeText(getApplicationContext(), "오른쪽때짐", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getActivity().getApplicationContext(), "오른쪽때짐", Toast.LENGTH_SHORT).show();
 
-                                    final LinearLayout linearLayout = (LinearLayout) findViewById(layoutId);
+                                    final LinearLayout linearLayout = (LinearLayout) getActivity().findViewById(layoutId);
                                     linearLayout.setVisibility(View.GONE);
-                                    LinearLayout linearLayouts = (LinearLayout) findViewById(R.id.language);
+                                    LinearLayout linearLayouts = (LinearLayout) getActivity().findViewById(R.id.language);
                                     LinearLayout.LayoutParams paramlinear = new LinearLayout.LayoutParams(
                                             LinearLayout.LayoutParams.MATCH_PARENT,
                                             LinearLayout.LayoutParams.MATCH_PARENT);
-                                    LayoutInflater comdeleinflate = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                                    LayoutInflater comdeleinflate = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                                     LinearLayout comdelelayout = (LinearLayout) comdeleinflate.inflate(R.layout.comdele, null);
 
                                     final int comdeleId = layoutId + 500;
                                     comdelelayout.setId(comdeleId);
 
                                     linearLayouts.addView(comdelelayout, paramlinear);
-                                    TextView dele = (TextView) findViewById(R.id.dele);
+                                    TextView dele = (TextView) getActivity().findViewById(R.id.dele);
                                     dele.setId(comdeleId + 10);
-                                    TextView com = (TextView) findViewById(R.id.com);
+                                    TextView com = (TextView) getActivity().findViewById(R.id.com);
                                     com.setId(comdeleId + 50);
                                     com.setOnClickListener(new View.OnClickListener() {
 
                                         @Override
                                         public void onClick(View v) {
-                                            LinearLayout linearLayouts = (LinearLayout) findViewById(comdeleId);
+                                            LinearLayout linearLayouts = (LinearLayout) getActivity().findViewById(comdeleId);
                                             linearLayouts.setVisibility(View.GONE);
-                                            LinearLayout linearLayout = (LinearLayout) findViewById(layoutId);
+                                            LinearLayout linearLayout = (LinearLayout) getActivity().findViewById(layoutId);
                                             linearLayout.setBackgroundResource(R.drawable.completeborderbottom);
                                             linearLayout.setVisibility(View.VISIBLE);
                                         }
@@ -241,7 +252,7 @@ public class BucketList extends Fragment {
                                     dele.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            LinearLayout linearLayouts = (LinearLayout) findViewById(comdeleId);
+                                            LinearLayout linearLayouts = (LinearLayout) getActivity().findViewById(comdeleId);
                                             linearLayouts.removeAllViews();
                                         }
                                     });
