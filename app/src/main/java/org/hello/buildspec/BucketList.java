@@ -278,7 +278,7 @@ public class BucketList extends Fragment {
 
     /*
     //빈공간 터치시 키보드 숨김
-    public void keybordControl() {
+    public void keyboardControl() {
         mScrollView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
