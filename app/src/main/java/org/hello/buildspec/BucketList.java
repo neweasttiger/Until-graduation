@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.annotation.SuppressLint;
 import android.app.DownloadManager;
@@ -264,5 +265,17 @@ public class BucketList extends Fragment {
         return i;
     }
 
+    /*
+    //빈공간 터치시 키보드 숨김
+    public void keybordControl() {
+        mScrollView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager touch_hide = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                touch_hide.hideSoftInputFromWindow(layout.getWindowToken(), 0);
+            }
+        });
+    }
+    */
 
 }
