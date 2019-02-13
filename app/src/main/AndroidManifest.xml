@@ -20,7 +20,7 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".ViewPager_Main"/>
         <activity
-            android:name=".Calendar"
+            android:name=".GetCalendar"
             android:theme="@android:style/Theme.Dialog"
             />
 

@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.DatePicker;
 
-public class Calendar extends Activity {
+import java.util.Calendar;
+
+public class GetCalendar extends Activity {
     String stringData;
     long tday;
     long day;
