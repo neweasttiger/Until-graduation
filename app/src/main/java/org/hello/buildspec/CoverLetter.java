@@ -2,7 +2,9 @@ package org.hello.buildspec;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +17,7 @@ public class CoverLetter extends Fragment{
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_coverletter, container, false);
+        ConstraintLayout layout = (ConstraintLayout) inflater.inflate(R.layout.fragment_coverletter, container, false);
         return layout;
     }
 }
