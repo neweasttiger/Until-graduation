@@ -17,7 +17,11 @@ public class CoverLetter extends Fragment{
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_coverletter, container, false);
+        View mView = inflater.inflate(R.layout.fragment_bucketlist, container, false);
+
         ConstraintLayout layout = (ConstraintLayout) inflater.inflate(R.layout.fragment_coverletter, container, false);
+
         return layout;
     }
 }
