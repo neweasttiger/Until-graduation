@@ -58,8 +58,9 @@ public class BucketList extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
     //public View onCreateView(ScrollView inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ScrollView mScrollView = (ScrollView) inflater.inflate(R.layout.fragment_bucketlist, container, false);
-        //LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_bucketlist, container, false);
+
+        //ScrollView mScrollView = (ScrollView) inflater.inflate(R.layout.fragment_bucketlist, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_bucketlist, container, false);
         final View mView = inflater.inflate(R.layout.fragment_bucketlist, container, false);
 
         //****  어학  ****//
@@ -140,8 +141,8 @@ public class BucketList extends Fragment {
 
         });
 
-        return mScrollView;
-
+        //return mScrollView;
+        return layout;
     }
 
     @SuppressLint("ClickableViewAccessibility")
