@@ -39,7 +39,7 @@ import java.util.Vector;
 
 import static android.app.Activity.RESULT_OK;
 
-public class BucketList extends Fragment {
+public class BucketList extends Fragment  {
 
     int i = 0;
     int j = 500;
@@ -60,6 +60,8 @@ public class BucketList extends Fragment {
         ScrollView mScrollView = (ScrollView) inflater.inflate(R.layout.fragment_bucketlist, container, false);
         //LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_bucketlist, container, false);
         final View mView = inflater.inflate(R.layout.fragment_bucketlist, container, false);
+
+
 
         //****  어학  ****//
         text2 = (TextView) mView.findViewById(R.id.dateselect2);
