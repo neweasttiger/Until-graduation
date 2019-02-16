@@ -84,7 +84,6 @@ public class BucketList extends Fragment  {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity().getApplicationContext(), "add", Toast.LENGTH_SHORT).show();
                 LinearLayout linearLayout = (LinearLayout) mView.findViewById(R.id.language);
                 LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 inflater.inflate(R.layout.language, linearLayout, true);
