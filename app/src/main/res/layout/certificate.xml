@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:id="@+id/certificateLinearlayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/borderbottom"
+    android:orientation="horizontal"
+    android:padding="19dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditText
+        android:id="@+id/newcertificate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:background="@drawable/button"
+        android:gravity="start"
+        android:hint="자격증 이름"
+        android:letterSpacing="-0.02"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="#475058"
+        android:textSize="14.4sp" />
+
+    <TextView
+        android:id="@+id/newdateselect3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginStart="10dp"
+        android:layout_weight="4"
+        android:gravity="end"
+        android:letterSpacing="-0.02"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="@string/날짜설정"
+        android:textColor="#787878"
+        android:textSize="14.4sp" />
+
+</LinearLayout>

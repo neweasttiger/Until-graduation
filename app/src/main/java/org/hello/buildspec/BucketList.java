@@ -7,32 +7,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.annotation.SuppressLint;
-import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Rect;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
-import android.transition.Slide;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,15 +28,21 @@ import static android.app.Activity.RESULT_OK;
 
 public class BucketList extends Fragment  {
 
-    int i = 0;
-    int j = 500;
-    int k = 1000;
-    int s = 1500;
-    float x = 0, y = 0;
+
+    int languagedateId = 0;
+    int languageexamnameId = 500;
+    int languagescoregradeId = 1000;
+    int languagelayoutId = 1500;
     Vector languageId = new Vector();
+
+
+
+    float x = 0, y = 0;
+
     TextView text2;
     EditText name;
     EditText score;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,17 +61,20 @@ public class BucketList extends Fragment  {
         name = (EditText) mView.findViewById(R.id.examname);
         score = (EditText) mView.findViewById(R.id.scoregrade);
         LinearLayout ss = (LinearLayout) mView.findViewById(R.id.lanorigin);
+
         TextView add = (TextView) mView.findViewById(R.id.addbutton);
 
-        ss.setId(s);
-        text2.setId(i);
-        name.setId(j);
-        score.setId(k);
-        languageId.add(i);
-        i++;
-        j++;
-        k++;
-        s++;
+        ss.setId(languagelayoutId);
+
+        text2.setId(languagedateId);
+        name.setId(languageexamnameId);
+        score.setId(languagescoregradeId);
+
+        languageId.add(languagedateId);
+        languagedateId++;
+        languageexamnameId++;
+        languagescoregradeId++;
+        languagelayoutId++;
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,15 +87,16 @@ public class BucketList extends Fragment  {
                 EditText newscore2 = (EditText) mView.findViewById(R.id.newscoregrade);
                 LinearLayout ss = (LinearLayout) mView.findViewById(R.id.newlanorigin);
 
-                ss.setId(s);
-                newtext2.setId(i);
-                languageId.add(i);
-                newexam2.setId(j);
-                newscore2.setId(k);
-                i++;
-                j++;
-                k++;
-                s++;
+                ss.setId(languagelayoutId);
+                newtext2.setId(languagedateId);
+                languageId.add(languagedateId);
+                newexam2.setId(languageexamnameId);
+                newscore2.setId(languagescoregradeId);
+                languagedateId++;
+                languageexamnameId++;
+                languagescoregradeId++;
+                languagelayoutId++;
+
                 newtext2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -141,11 +137,11 @@ public class BucketList extends Fragment  {
 
         });
 
-        //return mScrollView;
         return mView;
     }
 
     @SuppressLint("ClickableViewAccessibility")
+
     @Override
      public void onActivityResult(final int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -274,7 +270,7 @@ public class BucketList extends Fragment  {
     /////
     public int getgrade(String s, int score) {
 
-        return i;
+        return languagedateId;
     }
 
     /*
