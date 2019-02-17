@@ -64,7 +64,6 @@ public class BucketList extends Fragment  {
         final View mView = inflater.inflate(R.layout.fragment_bucketlist, container, false);
 
 
-
         //****  어학  ****//
         text2 = (TextView) mView.findViewById(R.id.dateselect2);
         name = (EditText) mView.findViewById(R.id.examname);
@@ -143,7 +142,7 @@ public class BucketList extends Fragment  {
         });
 
         //return mScrollView;
-        return layout;
+        return mView;
     }
 
     @SuppressLint("ClickableViewAccessibility")
