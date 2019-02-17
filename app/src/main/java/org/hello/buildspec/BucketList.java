@@ -40,7 +40,7 @@ import java.util.Vector;
 
 import static android.app.Activity.RESULT_OK;
 
-public class BucketList extends Fragment {
+public class BucketList extends Fragment  {
 
     int i = 0;
     int j = 500;
@@ -58,9 +58,12 @@ public class BucketList extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
     //public View onCreateView(ScrollView inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ScrollView mScrollView = (ScrollView) inflater.inflate(R.layout.fragment_bucketlist, container, false);
-        //LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_bucketlist, container, false);
+
+        //ScrollView mScrollView = (ScrollView) inflater.inflate(R.layout.fragment_bucketlist, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_bucketlist, container, false);
         final View mView = inflater.inflate(R.layout.fragment_bucketlist, container, false);
+
+
 
         //****  어학  ****//
         text2 = (TextView) mView.findViewById(R.id.dateselect2);
@@ -81,7 +84,6 @@ public class BucketList extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity().getApplicationContext(), "add", Toast.LENGTH_SHORT).show();
                 LinearLayout linearLayout = (LinearLayout) mView.findViewById(R.id.language);
                 LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 inflater.inflate(R.layout.language, linearLayout, true);
@@ -140,8 +142,8 @@ public class BucketList extends Fragment {
 
         });
 
-        return mScrollView;
-
+        //return mScrollView;
+        return layout;
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -278,7 +280,7 @@ public class BucketList extends Fragment {
 
     /*
     //빈공간 터치시 키보드 숨김
-    public void keybordControl() {
+    public void keyboardControl() {
         mScrollView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
