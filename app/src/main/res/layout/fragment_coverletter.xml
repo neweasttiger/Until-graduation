@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="4dp">
+        tools:layout_editor_absoluteY="16dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -25,25 +25,25 @@
             android:textSize="19sp"
             tools:text="자기소개서" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="-103dp"
-            tools:layout_editor_absoluteY="0dp">
+        <TableLayout
+            android:id="@+id/Cover_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="385dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteX="123dp"
-                tools:layout_editor_absoluteY="0dp">
+            <TableRow android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/image_Growth"
+                    android:layout_width="28dp"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/coverletter_icon_grow" />
 
                 <TextView
                     android:id="@+id/Growth"
                     android:layout_width="wrap_content"
-                    android:layout_height="66dp"
-                    android:layout_toRightOf="@id/image_Growth"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
                     android:letterSpacing="-0.02"
@@ -51,18 +51,23 @@
                     android:textSize="16sp"
                     tools:text="성장과정" />
 
-                <ImageView
-                    android:id="@+id/image_Growth"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    app:srcCompat="@drawable/coverletter_icon_grow" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:letterSpacing="0.06"
+                    android:textColor="#475058"
+                    android:textSize="15sp"
+                    tools:text="(0)" />
+            </TableRow>
 
+            <TableRow>
 
                 <TextView
                     android:id="@+id/School"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/Growth"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginTop="90dp"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
@@ -72,10 +77,22 @@
                     tools:text="학창시절" />
 
                 <TextView
-                    android:id="@+id/Hobby"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/School"
+                    android:layout_gravity="center_vertical"
+                    android:letterSpacing="0.06"
+                    android:textColor="#475058"
+                    android:textSize="15sp"
+                    tools:text="(0)" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/Hobbies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginTop="82dp"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
@@ -85,10 +102,22 @@
                     tools:text="취미특기" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:letterSpacing="0.06"
+                    android:textColor="#475058"
+                    android:textSize="15sp"
+                    tools:text="(0)" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
                     android:id="@+id/Values"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/Hobby"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginTop="21dp"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
@@ -98,10 +127,22 @@
                     tools:text="가치관" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:letterSpacing="0.06"
+                    android:textColor="#475058"
+                    android:textSize="15sp"
+                    tools:text="(0)" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
                     android:id="@+id/Apply"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/Values"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginTop="37dp"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
@@ -111,10 +152,22 @@
                     tools:text="지원동기" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:letterSpacing="0.06"
+                    android:textColor="#475058"
+                    android:textSize="15sp"
+                    tools:text="(0)" />
+            </TableRow>
+
+            <TableRow android:layout_height="161dp">
+
+                <TextView
                     android:id="@+id/Else"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/Apply"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginTop="101dp"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
@@ -122,8 +175,17 @@
                     android:textColor="#475058"
                     android:textSize="16sp"
                     tools:text="기타사항" />
-            </LinearLayout>
-        </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:letterSpacing="0.06"
+                    android:textColor="#475058"
+                    android:textSize="15sp"
+                    tools:text="(0)" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 
 
