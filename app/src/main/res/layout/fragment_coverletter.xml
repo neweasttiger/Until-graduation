@@ -7,14 +7,17 @@
     android:paddingBottom="60dp"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
+    android:background="#ffffff"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp">
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="39dp"
+        android:textColor="#ffffff"
+        android:background="#ffffff">
 
         <TextView
             android:layout_width="match_parent"
@@ -27,22 +30,26 @@
 
         <TableLayout
             android:id="@+id/Cover_table"
+            android:background="#ffffff"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="1dp">
 
             <TableRow android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/image_Growth"
-                    android:layout_width="28dp"
-                    android:layout_height="68dp"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
                     android:layout_gravity="center_vertical"
-                    app:srcCompat="@drawable/coverletter_icon_grow" />
+                    app:srcCompat="@drawable/coverletter_icon_grow"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="24dp"/>
 
                 <TextView
                     android:id="@+id/Growth"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="96.8dp"
                     android:layout_gravity="center_vertical"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
@@ -55,20 +62,35 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:letterSpacing="0.06"
+                    android:letterSpacing="0.94sp"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
+
+                <ImageView
+                    android:id="@+id/go"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    app:srcCompat="@drawable/invalid_name_go" />
             </TableRow>
 
             <TableRow>
 
+                <ImageView
+                    android:id="@+id/image_book"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/coverletter_icon_book"
+                    android:layout_marginStart="24.3dp"/>
+
                 <TextView
                     android:id="@+id/School"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="96.8dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginTop="90dp"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
                     android:letterSpacing="-0.02"
@@ -80,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:letterSpacing="0.06"
+                    android:letterSpacing="0.94sp"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
@@ -88,12 +110,18 @@
 
             <TableRow>
 
-                <TextView
-                    android:id="@+id/Hobbies"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/image_hobby"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginTop="82dp"
+                    app:srcCompat="@drawable/coverletter_icon_hobby"
+                    android:layout_marginStart="24.3dp"/>
+                <TextView
+                    android:id="@+id/Hobby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="96.8dp"
+                    android:layout_gravity="center_vertical"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
                     android:letterSpacing="-0.02"
@@ -105,20 +133,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:letterSpacing="0.06"
+                    android:letterSpacing="0.94sp"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
             </TableRow>
 
             <TableRow>
-
+                <ImageView
+                    android:id="@+id/image_value"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/coverletter_icon_value"
+                    android:layout_marginStart="24.3dp"/>
                 <TextView
                     android:id="@+id/Values"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="21dp"
+                    android:layout_height="96.8dp"
+                    android:layout_gravity="center"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
                     android:letterSpacing="-0.02"
@@ -130,20 +163,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:letterSpacing="0.06"
+                    android:letterSpacing="0.94sp"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
             </TableRow>
 
             <TableRow>
+                <ImageView
+                    android:id="@+id/image_apply"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/coverletter_icon_apply"
+                    android:layout_marginStart="24.3dp"/>
 
                 <TextView
                     android:id="@+id/Apply"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="96.8dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginTop="37dp"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
                     android:letterSpacing="-0.02"
@@ -155,7 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:letterSpacing="0.06"
+                    android:letterSpacing="0.94sp"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
@@ -163,12 +202,18 @@
 
             <TableRow android:layout_height="161dp">
 
+                <ImageView
+                    android:id="@+id/image_else"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/coverletter_icon_else"
+                    android:layout_marginStart="23.3dp"/>
                 <TextView
                     android:id="@+id/Else"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="96.8dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginTop="101dp"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
                     android:letterSpacing="-0.02"
@@ -180,7 +225,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:letterSpacing="0.06"
+                    android:letterSpacing="0.94sp"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
