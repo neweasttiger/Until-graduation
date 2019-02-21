@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
-    android:background="#ffffff"
+    android:paddingTop="?attr/actionBarSize"
+    android:paddingBottom="60dp"
     >
 
     <LinearLayout
@@ -16,15 +17,6 @@
         android:textColor="#ffffff"
         tools:layout_editor_absoluteX="221dp"
         tools:layout_editor_absoluteY="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="68dp"
-            android:background="#4dabff"
-            android:gravity="center"
-            android:textColor="#ffffff"
-            android:textSize="19sp"
-            tools:text="자기소개서" />
 
         <TableLayout
             android:id="@+id/Cover_table"
@@ -61,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="5dp"
-                    android:letterSpacing="0.94sp"
+                    android:letterSpacing="0.94"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
@@ -101,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="5dp"
-                    android:letterSpacing="0.94sp"
+                    android:letterSpacing="0.94"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
@@ -134,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="5dp"
-                    android:letterSpacing="0.94sp"
+                    android:letterSpacing="0.94"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
@@ -167,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="5dp"
-                    android:letterSpacing="0.94sp"
+                    android:letterSpacing="0.94"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
@@ -200,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="5dp"
-                    android:letterSpacing="0.94sp"
+                    android:letterSpacing="0.94"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
@@ -233,7 +225,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="5dp"
-                    android:letterSpacing="0.94sp"
+                    android:letterSpacing="0.94"
                     android:textColor="#475058"
                     android:textSize="15sp"
                     tools:text="(0)" />
