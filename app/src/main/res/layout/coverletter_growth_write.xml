@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="360 740"
+        android:weightSum="360"
         tools:layout_editor_absoluteX="92dp"
         tools:layout_editor_absoluteY="150dp"
         tools:ignore="MissingConstraints ">
