@@ -33,9 +33,8 @@ public class BucketList extends Fragment  {
     int languageexamnameId = 500;
     int languagescoregradeId = 1000;
     int languagelayoutId = 1500;
+
     Vector languageId = new Vector();
-
-
 
     float x = 0, y = 0;
 
@@ -71,10 +70,12 @@ public class BucketList extends Fragment  {
         score.setId(languagescoregradeId);
 
         languageId.add(languagedateId);
+
         languagedateId++;
         languageexamnameId++;
         languagescoregradeId++;
         languagelayoutId++;
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +91,7 @@ public class BucketList extends Fragment  {
                 ss.setId(languagelayoutId);
                 newtext2.setId(languagedateId);
                 languageId.add(languagedateId);
+
                 newexam2.setId(languageexamnameId);
                 newscore2.setId(languagescoregradeId);
                 languagedateId++;
@@ -104,12 +106,9 @@ public class BucketList extends Fragment  {
                         Toast.makeText(getActivity().getApplicationContext(), numStr2, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getActivity(), GetCalendar.class);
                         intent.putExtra("key", "value");
-                        startActivityForResult(intent, v.getId());
+                        getActivity().startActivityForResult(intent, v.getId());
                     }
-
                 });
-
-
             }
         });
 
@@ -152,12 +151,13 @@ public class BucketList extends Fragment  {
             return;
 
         if (requestCode == 100) {
+
             String result = data.getStringExtra("key");
+            Toast.makeText(getActivity().getApplicationContext(), result, Toast.LENGTH_SHORT).show();
             String dday = data.getStringExtra("day");
             String rd = dday + "\n" + result;
             TextView text = (TextView) getActivity().findViewById(R.id.dateselect1);
             text.setText(rd);
-
             Toast.makeText(getActivity().getApplicationContext(), dday, Toast.LENGTH_SHORT).show();
         }
 
@@ -172,12 +172,12 @@ public class BucketList extends Fragment  {
             String dday2 = data.getStringExtra("day");
             String s = result2.substring(2);
             String rd2 = dday2 + "\n" + s;
-
             SpannableString srd2 = new SpannableString(rd2);
             int start = rd2.indexOf("\n");
             int end = rd2.length();
             srd2.setSpan(new ForegroundColorSpan(Color.parseColor("#4dabff")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             srd2.setSpan(new RelativeSizeSpan(1.2f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+
             // *************************************************
 
             text2.setText(srd2);
