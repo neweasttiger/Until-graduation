@@ -12,7 +12,49 @@
         android:layout_height="match_parent"
         android:weightSum="575.5"
         android:orientation="vertical">
- 
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow>
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="33"/>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"
+                    android:weightSum="360"
+                    >
+                    <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="21"/>
+
+                    <EditText
+                        android:text="제목을 입력해주세요."
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_weight="315"
+                        android:background="#f1f1f1"
+                        android:shadowColor="#80909090"/>
+                </LinearLayout>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"/>
+            </TableRow>
+            <TableRow>
+
+            </TableRow>
+
+        </TableLayout>
 
     </LinearLayout>
 
