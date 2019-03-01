@@ -11,10 +11,175 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="27dp">
+        tools:layout_editor_absoluteY="44dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:weightSum="575.5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="33" />
+
+            <TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="25"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="21" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="315"
+                        android:background="#FFFFFF"
+                        android:gravity="start"
+                        android:hint="제목을 입력해주세요."
+                        android:letterSpacing="-0.37"
+                        android:shadowColor="#80909090"
+                        android:textColorHint="#3C475058" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="24" />
+                </LinearLayout>
+            </TableRow>
 
 
+            <TextView
+                android:id="@+id/Blank_before_line"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                />
+            
+            <TableRow>
+
+                <LinearLayout
+                    android:id="@+id/Line_write"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="16" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="328"
+                        android:background="#979797" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="16" />
+                </LinearLayout>
+            </TableRow>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10" />
+
+
+
+
+
+
+
+
+
+
+            <TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="22"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_weight="278" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_weight="61"
+                        android:gravity="end"
+                        android:letterSpacing="-0.02"
+                        android:textColor="#CC475058"
+                        android:textSize="15sp"
+                        tools:text="0/1000" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_weight="21" />
+                </LinearLayout>
+            </TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5" />
+
+            <TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="440"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="440dp"
+                        android:layout_weight="17" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="440dp"
+                        android:layout_weight="327"
+                        android:background="#f1f1f1"
+                        android:gravity="start"
+                        android:letterSpacing="-0.33"
+                        android:textColorhint="#CC475058"
+                        android:textSize="15sp"
+                        tools:hint="내용을 입력해주세요." />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="440dp"
+                        android:layout_weight="16" />
+                </LinearLayout>
+            </TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="34.5" />
+
+
+        </TableLayout>
 
 
     </LinearLayout>
