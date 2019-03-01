@@ -10,8 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="44dp">
+        android:orientation="vertical">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -61,7 +60,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="5"
                 />
-            
+
             <TableRow>
 
                 <LinearLayout
@@ -95,15 +94,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="10" />
-
-
-
-
-
-
-
-
-
 
             <TableRow>
 
