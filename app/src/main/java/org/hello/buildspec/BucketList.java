@@ -38,7 +38,7 @@ public class BucketList extends Fragment  {
 
     float x = 0, y = 0;
 
-    TextView text2;
+    TextView dataselect;
     EditText name;
     EditText score;
 
@@ -49,14 +49,12 @@ public class BucketList extends Fragment  {
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
     //public View onCreateView(ScrollView inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         //ScrollView mScrollView = (ScrollView) inflater.inflate(R.layout.fragment_bucketlist, container, false);
         LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_bucketlist, container, false);
         final View mView = inflater.inflate(R.layout.fragment_bucketlist, container, false);
 
-
         //****  어학  ****//
-        text2 = (TextView) mView.findViewById(R.id.dateselect2);
+        dataselect = (TextView) mView.findViewById(R.id.dateselect2);
         name = (EditText) mView.findViewById(R.id.examname);
         score = (EditText) mView.findViewById(R.id.scoregrade);
         LinearLayout ss = (LinearLayout) mView.findViewById(R.id.lanorigin);
@@ -65,7 +63,7 @@ public class BucketList extends Fragment  {
 
         ss.setId(languagelayoutId);
 
-        text2.setId(languagedateId);
+        dataselect.setId(languagedateId);
         name.setId(languageexamnameId);
         score.setId(languagescoregradeId);
 
@@ -125,7 +123,7 @@ public class BucketList extends Fragment  {
         });
         */
 
-        text2.setOnClickListener(new View.OnClickListener() {
+        dataselect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -135,7 +133,6 @@ public class BucketList extends Fragment  {
             }
 
         });
-
         return mView;
     }
 
@@ -149,17 +146,6 @@ public class BucketList extends Fragment  {
 
         if (resultCode != RESULT_OK)
             return;
-
-        if (requestCode == 100) {
-
-            String result = data.getStringExtra("key");
-            Toast.makeText(getActivity().getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-            String dday = data.getStringExtra("day");
-            String rd = dday + "\n" + result;
-            TextView text = (TextView) getActivity().findViewById(R.id.dateselect1);
-            text.setText(rd);
-            Toast.makeText(getActivity().getApplicationContext(), dday, Toast.LENGTH_SHORT).show();
-        }
 
         if (languageId.contains(requestCode)) {
 
