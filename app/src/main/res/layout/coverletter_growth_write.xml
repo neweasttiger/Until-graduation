@@ -152,7 +152,7 @@
                         android:background="#f1f1f1"
                         android:gravity="start"
                         android:letterSpacing="-0.33"
-                        android:textColorhint="#CC475058"
+                        android:textColorHint="#CC475058"
                         android:textSize="15sp"
                         tools:hint="내용을 입력해주세요." />
 
