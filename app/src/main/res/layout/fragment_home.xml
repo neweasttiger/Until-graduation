@@ -7,37 +7,75 @@
     android:orientation="vertical"
     android:paddingTop="?attr/actionBarSize"
     android:paddingBottom="60dp"
-    tool:context=".ViewPager_Main">
+    tool:context="org.hello.buildspec.Home">
 
-    <LinearLayout
+    <android.support.v4.app.FragmentTabHost
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/TabHost"
         android:layout_weight="1"
-        android:orientation="vertical">
-        <android.support.design.widget.TabLayout
-            android:id="@+id/TabLayout"
-            android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="1dp"
-            app:tabMode="fixed"
-            app:tabGravity="fill"
-            app:tabTextColor="@color/black"
-            app:tabSelectedTextColor="@color/black"
-            >
-        </android.support.design.widget.TabLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                ></TabWidget>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        //프레그먼트 넣을 곳
-        <FrameLayout
-            android:id="@+id/container_frame"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            >
-        </FrameLayout>
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tab_content1">
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/Ugly"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="hihi1"
+                            android:layout_gravity="center"
+                            />
+                    </android.support.v4.view.ViewPager>
+                </LinearLayout>
+
+                <include layout="@layout/fragment_tab2"
+                    android:id="@+id/tab_content2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HomeTab2"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    />
+
+
+                <include layout="@layout/fragment_tab3"
+                    android:id="@+id/tab_content3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HomeTab2"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    />
+
+            </FrameLayout>
+        </LinearLayout>
+    </android.support.v4.app.FragmentTabHost>
 
     <RelativeLayout
-        android:layout_weight="1"
+        android:layout_weight="1.3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="10dp"
@@ -65,11 +103,7 @@
 
     </RelativeLayout>
 
-
-
-
 </LinearLayout>
-
 
 
     <!--
@@ -146,4 +180,117 @@
 
 <!--
 app:layout_behavior="@string/appbar_scrolling_view_behavior"
+-->
+
+<!--
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <android.support.design.widget.TabLayout
+            android:id="@+id/TabLayout"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="1dp"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabTextColor="@color/black"
+            app:tabSelectedTextColor="@color/black"
+            >
+        </android.support.design.widget.TabLayout>
+-->
+
+<!--
+
+<TabHost
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/exp_tabhost"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ></TabWidget>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tab_content1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HomeTab1"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/tab_content2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HomeTab2"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/tab_content3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HomeTab3"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    />
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+-->
+
+<!--
+<android.support.design.widget.TabLayout
+android:id="@+id/isTabLayout"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:elevation="4dp"
+app:tabMode="fixed"
+app:tabGravity="fill"
+app:tabTextColor="@color/black"
+app:tabSelectedTextColor="@color/black"
+    >
+</android.support.design.widget.TabLayout>
+-->
+
+<!--
+<include layout="@layout/fragment_tab2"
+                    android:id="@+id/tab_content2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HomeTab2"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    />
+
+
+                <include layout="@layout/fragment_tab3"
+                    android:id="@+id/tab_content3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HomeTab2"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    />
 -->

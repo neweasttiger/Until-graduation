@@ -1,15 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tablay3"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Tab3Layout"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    >
+    android:layout_height="match_parent">
 
-    <TextView
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/Tab3_1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="hello new years day, this is page num 3" />
+        android:layout_height="50dp">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/Tab3_Hobby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="13dp"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/dodger_blue"
+            android:textSize="14sp"
+            android:text="취미특기" />
+
+        <TextView
+            android:id="@+id/Tab3_Title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="9dp"
+            android:layout_toRightOf="@id/Tab3_Hobby"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/brownish_grey"
+            android:textSize="14sp"
+            android:text="내 취미는 영화보기~" />
+
+        <TextView
+            android:id="@+id/Tab3_Context1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Tab3_Title1"
+            android:layout_marginLeft="26dp"
+            android:layout_toRightOf="@id/Tab3_Hobby"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/gunmetal"
+            android:textSize="11sp"
+            android:text="저의 취미는 앱만들어버리기~~" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Tab3_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/Tab3_1"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/Tab3_Grow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="13dp"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/dodger_blue"
+            android:textSize="14sp"
+            android:text="성장과정" />
+
+        <TextView
+            android:id="@+id/Tab3_Title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="9dp"
+            android:layout_toRightOf="@id/Tab3_Grow"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/brownish_grey"
+            android:textSize="14sp"
+            android:text="어머니에게서 노력과 끈기를 배우다" />
+
+        <TextView
+            android:id="@+id/Tab3_Context2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Tab3_Title2"
+            android:layout_marginLeft="26dp"
+            android:layout_toRightOf="@id/Tab3_Grow"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/gunmetal"
+            android:textSize="11sp"
+            android:text="어렸을 때 부터 가나다라마바사아자차카타파하…" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Tab3_3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/Tab3_2"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/Tab3_Etc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="13dp"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/dodger_blue"
+            android:textSize="14sp"
+            android:text="기타사항" />
+
+        <TextView
+            android:id="@+id/Tab3_Title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="9dp"
+            android:layout_toRightOf="@id/Tab3_Etc"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/brownish_grey"
+            android:textSize="14sp"
+            android:text="졸업하고 싶은데 졸업하기 싫다아아…" />
+
+        <TextView
+            android:id="@+id/Tab3_Context3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Tab3_Title3"
+            android:layout_marginLeft="26dp"
+            android:layout_toRightOf="@id/Tab3_Etc"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/gunmetal"
+            android:textSize="11sp"
+            android:text="으아아ㅏ아아아아ㅏ아아아아아아아아아아아아…" />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/CoverLetterMoreBtn"
+        android:layout_width="284dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/Tab3_3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/rectanglecopy3"
+        android:gravity="center"
+        android:letterSpacing="-0.02"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:text="자기소개서 더보기" />
+</RelativeLayout>

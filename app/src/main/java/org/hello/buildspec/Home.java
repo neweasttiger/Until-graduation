@@ -3,6 +3,7 @@ package org.hello.buildspec;
 //import android.app.ActionBar;
 import android.os.AsyncTask;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -32,10 +33,6 @@ import java.io.IOException;
 
 public class Home extends Fragment implements TabHost.OnTabChangeListener {
 
-    Tab1 tab1;
-    Tab2 tab2;
-    Tab3 tab3;
-
     int cnt=0;
     private String htmlPageUrl = "https://www.yna.co.kr/"; //파싱할 홈페이지의 URL주소
     private TextView textviewHtmlDocument;
@@ -48,13 +45,38 @@ public class Home extends Fragment implements TabHost.OnTabChangeListener {
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_home, container, false);
+        //LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_home, container, false);
         View mView = inflater.inflate(R.layout.fragment_home, container, false);
 
         final ViewPager_Main activity = (ViewPager_Main) getActivity();
 
         textviewHtmlDocument = (TextView)mView.findViewById(R.id.textView);
         textviewHtmlDocument.setMovementMethod(new ScrollingMovementMethod()); //스크롤 가능한 텍스트뷰로 만들기
+
+        //TabLayout mTabLayout = (TabLayout)mView.findViewById(R.id.isTabLayout);
+        HomeTabAdapter mHomeTabAdapter = new HomeTabAdapter(getFragmentManager());
+
+        ViewPager mViewPager = (ViewPager)mView.findViewById(R.id.Ugly);
+        mViewPager.setAdapter(mHomeTabAdapter);
+
+        FragmentTabHost host = (FragmentTabHost) mView.findViewById(R.id.TabHost);
+        host.setup(getActivity(), getChildFragmentManager(), android.R.id.tabcontent);
+
+        TabHost.TabSpec spec = host.newTabSpec("Tab11");
+        spec.setIndicator("성적관리");
+        spec.setContent(R.id.tab_content1);
+        host.addTab(spec);
+
+        spec = host.newTabSpec("Tab22");
+        spec.setIndicator("스펙버킷리스트");
+        spec.setContent(R.id.tab_content2);
+        host.addTab(spec);
+
+        spec = host.newTabSpec("Tab33");
+        spec.setIndicator("자기소개서");
+        spec.setContent(R.id.tab_content3);
+        host.addTab(spec);
+
 
         Button htmlTitleButton = (Button)mView.findViewById(R.id.button);
         htmlTitleButton.setOnClickListener(new View.OnClickListener() {
@@ -109,7 +131,7 @@ public class Home extends Fragment implements TabHost.OnTabChangeListener {
         });
         */
 
-        return layout;
+        return mView;
     }
 
     class JsoupAsyncTask extends AsyncTask<Void, Void, Void> {

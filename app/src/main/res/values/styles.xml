@@ -11,9 +11,12 @@
     <style name="RealAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textColorPrimary">@color/white</item>
         <!--Status Bar 배경색-->
-        <item name="colorPrimary">@color/realColorPrimary</item>
+        <item name="colorPrimary">@color/dodger_blue</item>
         <!--Status Bar 배경색-->
-        <item name="android:statusBarColor">@color/realColorPrimary</item>
+        <item name="android:statusBarColor">@color/dodger_blue</item>
+        <!--Status Ba        <item name="android:elevation">2dp</item>
+        <item name="android:shadowColor">@color/black_25</item>r 그림자-->
+
         <!--Status Bar 글자색깔-->
         <item name="android:windowLightStatusBar">false</item>
         <item name="windowNoTitle">true</item>

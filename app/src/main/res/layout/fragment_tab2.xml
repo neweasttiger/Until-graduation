@@ -1,15 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tablay2"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Tab2Layout"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    >
+    android:layout_height="match_parent">
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/Tab2_1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="hello new years day, this is page num 2" />
+        android:layout_height="50dp"
+        android:layout_marginTop="11dp"
+        android:gravity="center">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/Tab3_Number1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/dodger_blue"
+            android:textSize="24sp"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/Tab3_Period1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="42dp"
+            android:layout_toRightOf="@id/Tab3_Number1"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/gunmetal"
+            android:textSize="11sp"
+            android:text="2020.01.01 ~ 2020.01.01" />
+
+        <TextView
+            android:id="@+id/Tab3_Context1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Tab3_Period1"
+            android:layout_marginLeft="41dp"
+            android:layout_toRightOf="@id/Tab3_Number1"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/brownish_grey"
+            android:textSize="15sp"
+            android:text="토익점수  850점 이상" />
+
+        <TextView
+            android:id="@+id/Tab3_D-day1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="78dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@id/Tab3_Context1"
+            android:gravity="end"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/dodger_blue"
+            android:textSize="17sp"
+            android:text="D-210" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Tab3_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_below="@id/Tab2_1"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/Tab2_Number2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/dodger_blue"
+            android:textSize="24sp"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/Tab2_Period2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="42dp"
+            android:layout_toRightOf="@id/Tab2_Number2"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/gunmetal"
+            android:textSize="11sp"
+            android:text="2020.01.01 ~ 2020.01.01" />
+
+        <TextView
+            android:id="@+id/Tab2_Context2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Tab2_Period2"
+            android:layout_marginLeft="41dp"
+            android:layout_toRightOf="@id/Tab2_Number2"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/brownish_grey"
+            android:textSize="15sp"
+            android:text="토익점수  850점 이상" />
+
+        <TextView
+            android:id="@+id/Tab2_D-day2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="78dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@id/Tab2_Context2"
+            android:gravity="end"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/dodger_blue"
+            android:textSize="17sp"
+            android:text="D-210" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:gravity="center"
+        android:id="@+id/Tab2_3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/Tab3_2"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/Tab2_Number3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/dodger_blue"
+            android:textSize="24sp"
+            android:text="3" />
+
+        <TextView
+            android:id="@+id/Tab2_Period3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="42dp"
+            android:layout_toRightOf="@id/Tab2_Number3"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/gunmetal"
+            android:textSize="11sp"
+            android:text="2020.01.01 ~ 2020.01.01" />
+
+        <TextView
+            android:id="@+id/Tab2_Context3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Tab2_Period3"
+            android:layout_marginLeft="41dp"
+            android:layout_toRightOf="@id/Tab2_Number3"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/brownish_grey"
+            android:textSize="15sp"
+            android:text="토익점수  850점 이상" />
+
+        <TextView
+            android:id="@+id/Tab2_D-day3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="78dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@id/Tab2_Context3"
+            android:gravity="end"
+            android:letterSpacing="-0.02"
+            android:textColor="@color/dodger_blue"
+            android:textSize="17sp"
+            android:text="D-210" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/BucketListMoreBtn"
+        android:layout_width="284dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/Tab2_3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/rectanglecopy3"
+        android:gravity="center"
+        android:letterSpacing="-0.02"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:text="버킷리스트 더보기" />
+</RelativeLayout>

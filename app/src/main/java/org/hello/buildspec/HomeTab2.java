@@ -8,14 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-public class Tab1 extends Fragment {
+public class HomeTab2 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_tab1, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_tab2, container, false);
 
         ViewPager_Main activity = (ViewPager_Main) getActivity();
 

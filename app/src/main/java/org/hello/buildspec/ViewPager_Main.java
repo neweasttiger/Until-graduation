@@ -45,9 +45,6 @@ public class ViewPager_Main extends AppCompatActivity {
     Toolbar tb; // 툴바
     TextView tv;
 
-    Tab1 tab1;
-    Tab2 tab2;
-    Tab3 tab3;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
