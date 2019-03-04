@@ -43,8 +43,7 @@
                         android:gravity="start"
                         android:hint="제목을 입력해주세요."
                         android:letterSpacing="-0.37"
-                        android:shadowColor="#80909090"
-                        android:textColorHint="#3C475058" />
+                        android:textColorHint="#66475058" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -89,7 +88,6 @@
                 </LinearLayout>
             </TableRow>
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -106,12 +104,12 @@
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="22dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="278" />
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="22dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="61"
                         android:gravity="end"
                         android:letterSpacing="-0.02"
@@ -121,7 +119,7 @@
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="22dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="21" />
                 </LinearLayout>
             </TableRow>
@@ -142,23 +140,23 @@
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="440dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="17" />
 
-                    <TextView
+                    <EditText
                         android:layout_width="0dp"
                         android:layout_height="440dp"
                         android:layout_weight="327"
                         android:background="#f1f1f1"
                         android:gravity="start"
                         android:letterSpacing="-0.33"
-                        android:textColorHint="#CC475058"
+                        android:textColorHint="#66475058"
                         android:textSize="15sp"
                         tools:hint="내용을 입력해주세요." />
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="440dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="16" />
                 </LinearLayout>
             </TableRow>

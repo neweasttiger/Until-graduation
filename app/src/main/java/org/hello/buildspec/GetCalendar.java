@@ -40,6 +40,12 @@ public class GetCalendar extends Activity {
                         count ="D";
                         count += String.valueOf(lcount);
 
+                        //
+                        // fcm
+                        // retrofit
+                        // mvvm
+                        //
+
                         Intent intent = getIntent();
                         stringData = strDate;
                         resultData();
