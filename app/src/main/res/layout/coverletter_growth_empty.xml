@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:background="#f0f0f0"
             android:gravity="center"
-            android:textColor="#3C475058"
+            android:textColor="#66475058"
             android:textSize="17sp"
             android:letterSpacing="-0.37"
             android:text="작성된 자기소개서가 없습니다." />

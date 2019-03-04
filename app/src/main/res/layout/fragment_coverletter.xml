@@ -13,7 +13,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="#ffffff"
-        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints">
 
@@ -27,7 +26,7 @@
 
             <TableRow
                 android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="0.5dp"
                 android:background="#FFFFFF">
 
                 <LinearLayout
@@ -81,7 +80,7 @@
                         android:layout_weight="22"
                         android:gravity="center_vertical"
                         android:letterSpacing="0.94"
-                        android:textColor="#475058"
+                        android:textColor="#80475058"
                         android:textSize="15sp"
                         tools:text="(0)" />
 
@@ -104,7 +103,7 @@
 
             <TableRow
                 android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="0.5dp"
                 android:background="#FFFFFF">
 
                 <LinearLayout
@@ -155,7 +154,7 @@
                         android:layout_weight="22"
                         android:gravity="center_vertical"
                         android:letterSpacing="0.94"
-                        android:textColor="#475058"
+                        android:textColor="#80475058"
                         android:textSize="15sp"
                         tools:text="(0)" />
 
@@ -179,7 +178,7 @@
 
             <TableRow
                 android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="0.5dp"
                 android:background="#FFFFFF">
 
                 <LinearLayout
@@ -230,7 +229,7 @@
                         android:layout_weight="22"
                         android:gravity="center_vertical"
                         android:letterSpacing="0.94"
-                        android:textColor="#475058"
+                        android:textColor="#80475058"
                         android:textSize="15sp"
                         tools:text="(0)" />
 
@@ -253,7 +252,7 @@
 
             <TableRow
                 android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="0.5dp"
                 android:background="#FFFFFF">
 
                 <LinearLayout
@@ -304,7 +303,7 @@
                         android:layout_weight="22"
                         android:gravity="center_vertical"
                         android:letterSpacing="0.94"
-                        android:textColor="#475058"
+                        android:textColor="#80475058"
                         android:textSize="15sp"
                         tools:text="(0)" />
 
@@ -329,7 +328,7 @@
 
             <TableRow
                 android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="0.5dp"
                 android:background="#FFFFFF">
 
                 <LinearLayout
@@ -380,7 +379,7 @@
                         android:layout_weight="22"
                         android:gravity="center_vertical"
                         android:letterSpacing="0.94"
-                        android:textColor="#475058"
+                        android:textColor="#80475058"
                         android:textSize="15sp"
                         tools:text="(0)" />
 
@@ -405,8 +404,8 @@
 
             <TableRow
                 android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="1dp"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginBottom="0.5dp"
                 android:background="#FFFFFF">
 
                 <LinearLayout
@@ -457,7 +456,7 @@
                         android:layout_weight="22"
                         android:gravity="center_vertical"
                         android:letterSpacing="0.94"
-                        android:textColor="#475058"
+                        android:textColor="#80475058"
                         android:textSize="15sp"
                         tools:text="(0)" />
 
