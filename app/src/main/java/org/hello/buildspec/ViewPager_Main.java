@@ -66,9 +66,8 @@ public class ViewPager_Main extends AppCompatActivity {
         tv = (TextView)findViewById(R.id.ActionBarTitle);
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar);
         setSupportActionBar(tb);
-        ActionBar actionBar = getSupportActionBar();
+        final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
-
 
         //3탭기능 구성
         //final TabLayout mTabLayout=(TabLayout)findViewById(R.id.TabLayout);
@@ -200,24 +199,30 @@ public class ViewPager_Main extends AppCompatActivity {
                     case 0:
                         //setTitle("졸업까지");
                         tv.setText("졸업까지");
+                        getSupportActionBar().show();
                         return;
                     case 1:
                         //setTitle("자소서");
                         tv.setText("자기소개서");
+                        getSupportActionBar().show();
                         return;
                     case 2:
                         //setTitle("성적관리");
                         tv.setText("성적관리");
+                        getSupportActionBar().hide();
                         return;
                     case 3:
                         //setTitle("스펙 버킷리스트");
                         tv.setText("스펙 버킷리스트");
+                        getSupportActionBar().show();
                         return;
                     case 4:
                         //setTitle("설정");
                         tv.setText("설정");
+                        getSupportActionBar().show();
                         return;
                     default:
+                        getSupportActionBar().show();
                         return;
                 }
             }
@@ -231,6 +236,14 @@ public class ViewPager_Main extends AppCompatActivity {
 
     public void setActionBarTitle(String title) {
         //getSupportActionBar().setTitle(title);
+    }
+
+    private void hideActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar != null) {
+            actionBar.hide();
+        }
     }
 
     public void onBackPressed() {

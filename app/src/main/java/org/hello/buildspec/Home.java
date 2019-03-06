@@ -50,8 +50,9 @@ public class Home extends Fragment implements TabHost.OnTabChangeListener {
 
         final ViewPager_Main activity = (ViewPager_Main) getActivity();
 
-        textviewHtmlDocument = (TextView)mView.findViewById(R.id.textView);
-        textviewHtmlDocument.setMovementMethod(new ScrollingMovementMethod()); //스크롤 가능한 텍스트뷰로 만들기
+        /* 인터넷 연결관련 */
+        //textviewHtmlDocument = (TextView)mView.findViewById(R.id.textView);
+        //textviewHtmlDocument.setMovementMethod(new ScrollingMovementMethod()); //스크롤 가능한 텍스트뷰로 만들기
 
         //TabLayout mTabLayout = (TabLayout)mView.findViewById(R.id.isTabLayout);
         HomeTabAdapter mHomeTabAdapter = new HomeTabAdapter(getFragmentManager());
@@ -76,19 +77,6 @@ public class Home extends Fragment implements TabHost.OnTabChangeListener {
         spec.setIndicator("자기소개서");
         spec.setContent(R.id.tab_content3);
         host.addTab(spec);
-
-
-        Button htmlTitleButton = (Button)mView.findViewById(R.id.button);
-        htmlTitleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println( (cnt+1) +"번째 파싱");
-                JsoupAsyncTask jsoupAsyncTask = new JsoupAsyncTask();
-                jsoupAsyncTask.execute();
-                cnt++;
-            }
-        });
-
 
 
 
@@ -191,4 +179,30 @@ public class Home extends Fragment implements TabHost.OnTabChangeListener {
     public void onTabChanged(String tabId) {
         return;
     }
+
+    /*
+
+    // * @param txt<br/>
+    // *  @param len : 생략시 기본값 20<br/>
+    // *  @param lastTxt : 생략시 기본값 "..."<br/>
+    // *  @returns 결과값
+    // * <br/>
+    // * <br/>
+    // * 특정 글자수가 넘어가면 넘어가는 글자는 자르고 마지막에 대체문자 처리<br/>
+    // *  ex) 가나다라마바사 -> textLengthOverCut('가나다라마바사', '5', '...') : 가나다라마...<br/>
+    //
+    void textLengthOverCut(String txt, int len, char lastTxt) {
+        if (len == "" || len == null) { // 기본값
+            len = 20;
+        }
+        if (lastTxt == "" || lastTxt == null) { // 기본값
+            lastTxt = "...";
+        }
+        if (txt.length > len) {
+            txt = txt.substr(0, len) + lastTxt;
+        }
+        return txt;
+    }
+    */
+
 }

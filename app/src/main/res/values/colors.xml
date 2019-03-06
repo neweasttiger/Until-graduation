@@ -9,6 +9,7 @@
     <color name="white_90">#e6fafafa</color>
     <color name="gunmetal">#475058</color>
     <color name="brownish_grey">#5e5e5e</color>
+    <color name="warm_grey">#979797</color>
     <color name="sky_blue">#71bcff</color>
     <color name="pinkish_grey">#c4c4c4</color>
     <color name="white_90_two">#e6ffffff</color>
@@ -19,6 +20,7 @@
     <color name="pinkish_grey_three">#cecece</color>
     <color name="greyish_brown">#424242</color>
     <color name="black">#000000</color>
+    <color name="dusty_blue">#5680a5</color>
 
 </resources>
 

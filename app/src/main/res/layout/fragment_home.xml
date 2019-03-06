@@ -74,35 +74,221 @@
         </LinearLayout>
     </android.support.v4.app.FragmentTabHost>
 
-    <RelativeLayout
-        android:layout_weight="1.3"
+    <LinearLayout
+        android:layout_marginBottom="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        >
-
-        <TextView
+        android:layout_weight="1.3"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text=""
-            android:id="@+id/textView"
-            android:maxLines = "100"
-            android:scrollbars = "vertical"
-            android:layout_above="@+id/button" />
+            android:orientation="horizontal"
+            android:layout_weight="1.05">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="데이터 가져오기"
-            android:id="@+id/button"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="23dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/gunmetal"
+                android:letterSpacing="-0.02"
+                android:text="공지사항"
+                />
 
-    </RelativeLayout>
+            <!-- LinearLayout 에서 오른쪽 정렬하기위해 필요 -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="22dp"
+                android:letterSpacing="-0.02"
+                android:text="더보기"
+                android:textColor="@color/pinkish_grey_two"
+                android:textSize="15sp" />
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/warm_grey" />
+        <RelativeLayout
+            android:id="@+id/Notice1"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+                <TextView
+                    android:layout_marginTop="13dp"
+                    android:id="@+id/Notice_Alert1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/circle_alert"/>
+
+                <TextView
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="6dp"
+                    android:id="@+id/Notice_Content1"
+                    android:layout_toRightOf="@id/Notice_Alert1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/gunmetal"
+                    android:letterSpacing="-0.02"
+                    android:text="사회공헌활동 사례 발굴 및  확산 공모전안내"
+                    />
+
+
+            <TextView
+                android:layout_marginLeft="7dp"
+                android:layout_toRightOf="@id/Notice_Alert1"
+                android:layout_below="@id/Notice_Content1"
+                android:id="@+id/Notice_Date1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="@color/gunmetal"
+                android:letterSpacing="-0.02"
+                android:text="2019-02-26"
+                />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/Notice_Content1"
+                android:layout_toRightOf="@id/Notice_Date1"
+                android:id="@+id/Notice_From1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="@color/gunmetal"
+                android:letterSpacing="-0.02"
+                android:text="디자인학부"
+                />
+
+        </RelativeLayout>
+
+        <!-- 밑 부분 레이아웃 2개는 5dp 간격때문에 layout_weight 를 0.98로 설정하여 좀 더 사이즈 키워주었음 -->
+        <RelativeLayout
+            android:id="@+id/Notice2"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.98">
+            <TextView
+                android:layout_marginTop="13dp"
+                android:id="@+id/Notice_Alert2"
+                android:layout_marginLeft="10dp"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/circle_alert"/>
+
+            <TextView
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="6dp"
+                android:id="@+id/Notice_Content2"
+                android:layout_toRightOf="@id/Notice_Alert2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/gunmetal"
+                android:letterSpacing="-0.02"
+                android:text="사회공헌활동 사례 발굴 및  확산 공모전안내"
+                />
+
+
+            <TextView
+                android:layout_marginLeft="7dp"
+                android:layout_toRightOf="@id/Notice_Alert2"
+                android:layout_below="@id/Notice_Content2"
+                android:id="@+id/Notice_Date2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="@color/gunmetal"
+                android:letterSpacing="-0.02"
+                android:text="2019-02-26"
+                />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/Notice_Content2"
+                android:layout_toRightOf="@id/Notice_Date2"
+                android:id="@+id/Notice_From2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="@color/gunmetal"
+                android:letterSpacing="-0.02"
+                android:text="디자인학부"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Notice3"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.98">
+            <TextView
+                android:layout_marginTop="13dp"
+                android:id="@+id/Notice_Alert3"
+                android:layout_marginLeft="10dp"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/circle_alert"/>
+
+            <TextView
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="6dp"
+                android:id="@+id/Notice_Content3"
+                android:layout_toRightOf="@id/Notice_Alert3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/gunmetal"
+                android:letterSpacing="-0.02"
+                android:text="사회공헌활동 사례 발굴 및  확산 공모전안내"
+                />
+
+
+            <TextView
+                android:layout_marginLeft="7dp"
+                android:layout_toRightOf="@id/Notice_Alert3"
+                android:layout_below="@id/Notice_Content3"
+                android:id="@+id/Notice_Date3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="@color/gunmetal"
+                android:letterSpacing="-0.02"
+                android:text="2019-02-26"
+                />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/Notice_Content3"
+                android:layout_toRightOf="@id/Notice_Date3"
+                android:id="@+id/Notice_From3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="@color/gunmetal"
+                android:letterSpacing="-0.02"
+                android:text="디자인학부"
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
 </LinearLayout>
 
 
