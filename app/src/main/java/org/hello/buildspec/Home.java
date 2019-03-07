@@ -2,6 +2,7 @@ package org.hello.buildspec;
 
 //import android.app.ActionBar;
 import android.os.AsyncTask;
+import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -20,6 +21,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 //import android.widget.Toolbar;
 import android.support.v7.widget.Toolbar;
+import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -34,11 +36,10 @@ import java.io.IOException;
 public class Home extends Fragment implements TabHost.OnTabChangeListener {
 
     int cnt=0;
-    private String htmlPageUrl = "https://www.yna.co.kr/"; //파싱할 홈페이지의 URL주소
+    private String htmlPageUrl = "https://sc.inu.ac.kr/inumportal/main/noti/list_all?page_num=1&board_id=0"; //파싱할 홈페이지의 URL주소
     private TextView textviewHtmlDocument;
     private String htmlContentInStringFormat="";
-
-
+    TextView tv1;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,27 +47,41 @@ public class Home extends Fragment implements TabHost.OnTabChangeListener {
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         //LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_home, container, false);
-        View mView = inflater.inflate(R.layout.fragment_home, container, false);
-
+        final View mView = inflater.inflate(R.layout.fragment_home, container, false);
         final ViewPager_Main activity = (ViewPager_Main) getActivity();
+        tv1 = (TextView)mView.findViewById(R.id.Notice_Content1);
 
         /* 인터넷 연결관련 */
-        //textviewHtmlDocument = (TextView)mView.findViewById(R.id.textView);
-        //textviewHtmlDocument.setMovementMethod(new ScrollingMovementMethod()); //스크롤 가능한 텍스트뷰로 만들기
+        textviewHtmlDocument = (TextView)mView.findViewById(R.id.textView);
+        textviewHtmlDocument.setMovementMethod(new ScrollingMovementMethod()); //스크롤 가능한 텍스트뷰로 만들기
+
+        Button htmlTitleButton = (Button)mView.findViewById(R.id.button);
+        htmlTitleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println( (cnt+1) +"번째 파싱");
+                JsoupAsyncTask jsoupAsyncTask = new JsoupAsyncTask();
+                jsoupAsyncTask.execute();
+                cnt++;
+            }
+        });
+        //System.out.println("으아악"+textviewHtmlDocument.getText());
 
         //TabLayout mTabLayout = (TabLayout)mView.findViewById(R.id.isTabLayout);
         HomeTabAdapter mHomeTabAdapter = new HomeTabAdapter(getFragmentManager());
-
+        /*
         ViewPager mViewPager = (ViewPager)mView.findViewById(R.id.Ugly);
         mViewPager.setAdapter(mHomeTabAdapter);
 
         FragmentTabHost host = (FragmentTabHost) mView.findViewById(R.id.TabHost);
         host.setup(getActivity(), getChildFragmentManager(), android.R.id.tabcontent);
 
+
         TabHost.TabSpec spec = host.newTabSpec("Tab11");
         spec.setIndicator("성적관리");
         spec.setContent(R.id.tab_content1);
         host.addTab(spec);
+
 
         spec = host.newTabSpec("Tab22");
         spec.setIndicator("스펙버킷리스트");
@@ -78,37 +93,78 @@ public class Home extends Fragment implements TabHost.OnTabChangeListener {
         spec.setContent(R.id.tab_content3);
         host.addTab(spec);
 
+        */
 
-
-        /*
-        //3탭기능 구성
-        //final TabLayout mTabLayout=(TabLayout)findViewById(R.id.TabLayout);
-        final TabLayout mTabLayout=(TabLayout)view.findViewById(R.id.TabLayout);
-        mTabLayout.addTab(mTabLayout.newTab().setText("성적관리"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("스펙 버킷리스트"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("자기소개서"));
+        TabLayout mTabLayout=(TabLayout)mView.findViewById(R.id.HomeTabLayout);
 
         //프레그먼트를 메니져로 보여줌
-        activity.getSupportFragmentManager().beginTransaction().add(R.id.container,tab1).commit();
+        //activity.getSupportFragmentManager().beginTransaction().add(R.id.container,tab1).commit();
 
         //탭버튼을 클릭했을 때 프레그먼트 동작
         mTabLayout.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+
                 //선택된 탭 번호 반환
-                int position =tab.getPosition();
+                int position = tab.getPosition();
+                changeView(position) ;
 
-                Fragment selected = null;
+                // 프래그먼트 전환인 경우 사용
+                // Fragment selected = null;
 
-                if(position == 0 ){
-                    selected = tab1;
-                }else if(position == 1 ){
-                    selected = tab2;
-                }else if(position == 2 ){
-                    selected = tab3;
+                /*
+                LinearLayout homeTab_content1 = (LinearLayout)mView.findViewById(R.id.HomeTab_Content1);
+                RelativeLayout homeTab_content2 = (RelativeLayout)mView.findViewById(R.id.HomeTab_Content2);
+                RelativeLayout homeTab_content3 = (RelativeLayout)mView.findViewById(R.id.HomeTab_Content3);
+                */
+
+                /*
+                switch (position) {
+                    case 0 :
+                        homeTab_content1.setVisibility(View.VISIBLE);
+                        homeTab_content2.setVisibility(View.INVISIBLE);
+                        homeTab_content3.setVisibility(View.INVISIBLE);
+                        break;
+                    case 1 :
+                        homeTab_content1.setVisibility(View.INVISIBLE);
+                        homeTab_content2.setVisibility(View.VISIBLE);
+                        homeTab_content1.setVisibility(View.INVISIBLE);
+                        break;
+                    case 2 :
+                        homeTab_content1.setVisibility(View.INVISIBLE);
+                        homeTab_content2.setVisibility(View.INVISIBLE);
+                        homeTab_content3.setVisibility(View.VISIBLE);
+                        break;
+                    default:
+                        homeTab_content1.setVisibility(View.INVISIBLE);
+                        homeTab_content2.setVisibility(View.INVISIBLE);
+                        homeTab_content3.setVisibility(View.INVISIBLE);
+
                 }
-                //선택된 프레그먼트로 바꿔줌
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, selected).commit();
+                */
+
+                /*
+                if(position == 0 ){
+                    homeTab_content1.setVisibility(View.INVISIBLE);
+                    homeTab_content2.setVisibility(View.VISIBLE);
+                    homeTab_content1.setVisibility(View.INVISIBLE);
+                    // selected = tab1; 프래그먼트인 경우
+                }else if(position == 1 ){
+                    homeTab_content1.setVisibility(View.INVISIBLE);
+                    homeTab_content2.setVisibility(View.VISIBLE);
+                    homeTab_content1.setVisibility(View.INVISIBLE);
+                    // selected = tab2; 프래그먼트인 경우
+                }else if(position == 2 ){
+                    homeTab_content1.setVisibility(View.INVISIBLE);
+                    homeTab_content2.setVisibility(View.INVISIBLE);
+                    homeTab_content3.setVisibility(View.VISIBLE);
+                    // selected = tab3; 프래그먼트인 경우
+                }
+                */
+
+
+                // 선택된 프래그먼트로 바꿔줌, 이 앱에서는 뷰전환 할것이므로 사용X
+                // getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, selected).commit();
             }
 
             @Override
@@ -116,8 +172,34 @@ public class Home extends Fragment implements TabHost.OnTabChangeListener {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) { }
+
+            private void changeView(int index) {
+                //LinearLayout homeTab_content1 = (LinearLayout)mView.findViewById(R.id.HomeTab_Content1);
+                RelativeLayout homeTab_content1 = (RelativeLayout)mView.findViewById(R.id.HomeTab_Content1);
+                RelativeLayout homeTab_content2 = (RelativeLayout)mView.findViewById(R.id.HomeTab_Content2);
+                RelativeLayout homeTab_content3 = (RelativeLayout)mView.findViewById(R.id.HomeTab_Content3);
+
+                switch (index) {
+                    case 0 :
+                        homeTab_content1.setVisibility(View.VISIBLE);
+                        homeTab_content2.setVisibility(View.INVISIBLE);
+                        homeTab_content3.setVisibility(View.INVISIBLE);
+                        break;
+                    case 1 :
+                        homeTab_content1.setVisibility(View.INVISIBLE);
+                        homeTab_content2.setVisibility(View.VISIBLE);
+                        homeTab_content3.setVisibility(View.INVISIBLE);
+                        break;
+                    case 2 :
+                        homeTab_content1.setVisibility(View.INVISIBLE);
+                        homeTab_content2.setVisibility(View.INVISIBLE);
+                        homeTab_content3.setVisibility(View.VISIBLE);
+                        break;
+
+                }
+            }
         });
-        */
+
 
         return mView;
     }
@@ -136,13 +218,17 @@ public class Home extends Fragment implements TabHost.OnTabChangeListener {
                 Document doc = Jsoup.connect(htmlPageUrl).get();
 
                 //테스트1
-                Elements titles= doc.select("div.news-con h1.tit-news");
+                //Elements titles= doc.select("div.news-con h1.tit-news");
+                Elements titles= doc.select("div.cont");
 
                 System.out.println("-------------------------------------------------------------");
                 for(Element e: titles){
                     System.out.println("title: " + e.text());
                     htmlContentInStringFormat += e.text().trim() + "\n";
                 }
+
+
+
 
                 //테스트2
                 titles= doc.select("div.news-con h2.tit-news");
@@ -172,6 +258,8 @@ public class Home extends Fragment implements TabHost.OnTabChangeListener {
         @Override
         protected void onPostExecute(Void result) {
             textviewHtmlDocument.setText(htmlContentInStringFormat);
+            tv1.setText(htmlContentInStringFormat);
+            System.out.println("으아악"+textviewHtmlDocument.getText());
         }
     }
 

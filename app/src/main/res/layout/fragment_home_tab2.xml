@@ -8,8 +8,8 @@
         android:id="@+id/Tab2_1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="11dp"
-        android:gravity="center">
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="11dp">
 
         <TextView
             android:id="@+id/Tab3_Number1"
@@ -17,9 +17,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
             android:letterSpacing="-0.02"
-            android:textColor="@color/dodger_blue"
-            android:textSize="24sp"
-            android:text="1" />
+            android:text="1"
+            android:textColor="@color/sky_blue"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/Tab3_Period1"
@@ -28,9 +28,9 @@
             android:layout_marginLeft="42dp"
             android:layout_toRightOf="@id/Tab3_Number1"
             android:letterSpacing="-0.02"
+            android:text="2020.01.01 ~ 2020.01.01"
             android:textColor="@color/gunmetal"
-            android:textSize="11sp"
-            android:text="2020.01.01 ~ 2020.01.01" />
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Tab3_Context1"
@@ -40,9 +40,9 @@
             android:layout_marginLeft="41dp"
             android:layout_toRightOf="@id/Tab3_Number1"
             android:letterSpacing="-0.02"
+            android:text="토익점수  850점 이상"
             android:textColor="@color/brownish_grey"
-            android:textSize="15sp"
-            android:text="토익점수  850점 이상" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/Tab3_D-day1"
@@ -53,17 +53,17 @@
             android:layout_toRightOf="@id/Tab3_Context1"
             android:gravity="end"
             android:letterSpacing="-0.02"
-            android:textColor="@color/dodger_blue"
-            android:textSize="17sp"
-            android:text="D-210" />
+            android:text="D-210"
+            android:textColor="@color/sky_blue"
+            android:textSize="17sp" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/Tab3_2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="center"
         android:layout_below="@id/Tab2_1"
+        android:layout_marginLeft="33dp"
         android:layout_marginTop="6dp">
 
         <TextView
@@ -72,9 +72,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
             android:letterSpacing="-0.02"
-            android:textColor="@color/dodger_blue"
-            android:textSize="24sp"
-            android:text="2" />
+            android:text="2"
+            android:textColor="@color/sky_blue"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/Tab2_Period2"
@@ -83,9 +83,9 @@
             android:layout_marginLeft="42dp"
             android:layout_toRightOf="@id/Tab2_Number2"
             android:letterSpacing="-0.02"
+            android:text="2020.01.01 ~ 2020.01.01"
             android:textColor="@color/gunmetal"
-            android:textSize="11sp"
-            android:text="2020.01.01 ~ 2020.01.01" />
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Tab2_Context2"
@@ -95,9 +95,9 @@
             android:layout_marginLeft="41dp"
             android:layout_toRightOf="@id/Tab2_Number2"
             android:letterSpacing="-0.02"
+            android:text="토익점수  850점 이상"
             android:textColor="@color/brownish_grey"
-            android:textSize="15sp"
-            android:text="토익점수  850점 이상" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/Tab2_D-day2"
@@ -108,17 +108,17 @@
             android:layout_toRightOf="@id/Tab2_Context2"
             android:gravity="end"
             android:letterSpacing="-0.02"
-            android:textColor="@color/dodger_blue"
-            android:textSize="17sp"
-            android:text="D-210" />
+            android:text="D-210"
+            android:textColor="@color/sky_blue"
+            android:textSize="17sp" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:gravity="center"
         android:id="@+id/Tab2_3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/Tab3_2"
+        android:layout_marginLeft="33dp"
         android:layout_marginTop="6dp">
 
         <TextView
@@ -127,9 +127,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
             android:letterSpacing="-0.02"
-            android:textColor="@color/dodger_blue"
-            android:textSize="24sp"
-            android:text="3" />
+            android:text="3"
+            android:textColor="@color/sky_blue"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/Tab2_Period3"
@@ -138,9 +138,9 @@
             android:layout_marginLeft="42dp"
             android:layout_toRightOf="@id/Tab2_Number3"
             android:letterSpacing="-0.02"
+            android:text="2020.01.01 ~ 2020.01.01"
             android:textColor="@color/gunmetal"
-            android:textSize="11sp"
-            android:text="2020.01.01 ~ 2020.01.01" />
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/Tab2_Context3"
@@ -150,9 +150,9 @@
             android:layout_marginLeft="41dp"
             android:layout_toRightOf="@id/Tab2_Number3"
             android:letterSpacing="-0.02"
+            android:text="토익점수  850점 이상"
             android:textColor="@color/brownish_grey"
-            android:textSize="15sp"
-            android:text="토익점수  850점 이상" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/Tab2_D-day3"
@@ -163,9 +163,9 @@
             android:layout_toRightOf="@id/Tab2_Context3"
             android:gravity="end"
             android:letterSpacing="-0.02"
-            android:textColor="@color/dodger_blue"
-            android:textSize="17sp"
-            android:text="D-210" />
+            android:text="D-210"
+            android:textColor="@color/sky_blue"
+            android:textSize="17sp" />
     </RelativeLayout>
 
     <Button
@@ -178,7 +178,7 @@
         android:background="@drawable/rectanglecopy3"
         android:gravity="center"
         android:letterSpacing="-0.02"
+        android:text="버킷리스트 더보기"
         android:textColor="#ffffff"
-        android:textSize="15sp"
-        android:text="버킷리스트 더보기" />
+        android:textSize="15sp" />
 </RelativeLayout>

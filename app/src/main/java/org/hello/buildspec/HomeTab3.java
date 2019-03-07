@@ -15,7 +15,7 @@ public class HomeTab3 extends Fragment {
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_tab3, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_home_tab3, container, false);
 
         ViewPager_Main activity = (ViewPager_Main) getActivity();
 

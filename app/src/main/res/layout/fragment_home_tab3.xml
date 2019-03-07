@@ -17,7 +17,7 @@
             android:layout_marginLeft="26dp"
             android:layout_marginTop="13dp"
             android:letterSpacing="-0.02"
-            android:textColor="@color/dodger_blue"
+            android:textColor="@color/sky_blue"
             android:textSize="14sp"
             android:text="취미특기" />
 
@@ -61,7 +61,7 @@
             android:layout_marginLeft="26dp"
             android:layout_marginTop="13dp"
             android:letterSpacing="-0.02"
-            android:textColor="@color/dodger_blue"
+            android:textColor="@color/sky_blue"
             android:textSize="14sp"
             android:text="성장과정" />
 
@@ -105,7 +105,7 @@
             android:layout_marginLeft="26dp"
             android:layout_marginTop="13dp"
             android:letterSpacing="-0.02"
-            android:textColor="@color/dodger_blue"
+            android:textColor="@color/sky_blue"
             android:textSize="14sp"
             android:text="기타사항" />
 
