@@ -65,7 +65,7 @@
                         android:letterSpacing="-0.02"
                         android:textColor="#475058"
                         android:textSize="16sp"
-                        tools:text="성장과정" />
+                        android:text="성장과정" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -82,7 +82,7 @@
                         android:letterSpacing="0.94"
                         android:textColor="#80475058"
                         android:textSize="15sp"
-                        tools:text="(0)" />
+                        android:text="(0)" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -140,7 +140,7 @@
                         android:letterSpacing="-0.02"
                         android:textColor="#475058"
                         android:textSize="16sp"
-                        tools:text="학창시절" />
+                        android:text="학창시절" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -156,7 +156,7 @@
                         android:letterSpacing="0.94"
                         android:textColor="#80475058"
                         android:textSize="15sp"
-                        tools:text="(0)" />
+                        android:text="(0)" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -215,7 +215,7 @@
                         android:letterSpacing="-0.02"
                         android:textColor="#475058"
                         android:textSize="16sp"
-                        tools:text="취미특기" />
+                        android:text="취미특기" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -231,7 +231,7 @@
                         android:letterSpacing="0.94"
                         android:textColor="#80475058"
                         android:textSize="15sp"
-                        tools:text="(0)" />
+                        android:text="(0)" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -289,7 +289,7 @@
                         android:letterSpacing="-0.02"
                         android:textColor="#475058"
                         android:textSize="16sp"
-                        tools:text="가치관" />
+                        android:text="가치관" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -305,7 +305,7 @@
                         android:letterSpacing="0.94"
                         android:textColor="#80475058"
                         android:textSize="15sp"
-                        tools:text="(0)" />
+                        android:text="(0)" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -365,7 +365,7 @@
                         android:letterSpacing="-0.02"
                         android:textColor="#475058"
                         android:textSize="16sp"
-                        tools:text="지원동기" />
+                        android:text="지원동기" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -381,7 +381,7 @@
                         android:letterSpacing="0.94"
                         android:textColor="#80475058"
                         android:textSize="15sp"
-                        tools:text="(0)" />
+                        android:text="(0)" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -442,7 +442,7 @@
                         android:letterSpacing="-0.02"
                         android:textColor="#475058"
                         android:textSize="16sp"
-                        tools:text="기타사항" />
+                        android:text="기타사항" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -458,7 +458,7 @@
                         android:letterSpacing="0.94"
                         android:textColor="#80475058"
                         android:textSize="15sp"
-                        tools:text="(0)" />
+                        android:text="(0)" />
 
                     <TextView
                         android:layout_width="0dp"
