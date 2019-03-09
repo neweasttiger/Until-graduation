@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
     <RelativeLayout
-    android:layout_height="200dp"
-    android:layout_width="300dip"
+    android:layout_height="183dp"
+    android:layout_width="280dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textSize="25sp"
-        android:text="공지사항/Notice"
-        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:layout_marginTop="34.8dp"
+        android:text="''제목 이름 넣을 곳''"
+        android:textColor="#de000000"
+        android:textSize="15sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="101.4dp"
+        android:text="삭제 하시겠습니까?"
+        android:textColor="#de000000"
+        android:textSize="15sp" />
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:text="확인"
+        android:textSize="13sp"
         android:layout_alignParentRight="true"
+        android:id="@+id/button2"
+        android:background="#FFFFFF"
+        android:textColor="#070707"
+        android:layout_toRightOf="@+id/button1"
+        android:layout_alignBottom="@+id/button1"/>
+
+    <Button android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:text=""
         android:layout_alignParentLeft="true"
-        android:id="@+id/"/>
-
-    <Button android:layout_height="wrap_content" android:layout_width="150dp" android:text="취소" android:layout_alignParentRight="true" android:id="@+id/button2" android:layout_toRightOf="@+id/button1" android:layout_alignBottom="@+id/button1"/>
-
-    <Button android:layout_height="wrap_content" android:layout_width="150dp" android:text="확인" android:layout_alignParentLeft="true" android:id="@+id/button1" android:layout_alignParentBottom="true"/>
-
+        android:id="@+id/button1"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>
